@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Header, Footer } from './components';
@@ -14,6 +13,8 @@ class App extends Component {
           <Route path="/" exact component={IndexScreen} />
           <Route path="/contacts" component={ContactsScreen} />
           <Route path="/about" component={AboutScreen} />
+          {/* ?todo */}
+          {/* <Route component={NotFound} />  */}
         </Switch>
         <Footer />
       </BrowserRouter>
