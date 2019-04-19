@@ -1,0 +1,29 @@
+@import "~slick-carousel/slick/slick.css"
+@import "~slick-carousel/slick/slick-theme.css"
+.slick-slider,
+.slick-slider img,
+.slick-slide > div
+  max-height: 640px
+.slick-slider img
+  display: block
+  width: 100%
+  position: relative
+.bg
+    position: absolute
+    content: ''
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))
+.slider-wrapper
+  .container
+    position: relative
+  h1
+    position: absolute
+    left: 0
+    top: 283px
+    z-index: 1
+    max-width: 950px
+    +fm
+    font-size: 60px

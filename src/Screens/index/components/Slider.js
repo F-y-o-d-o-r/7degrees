@@ -1,36 +1,73 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 
+import one from '../../../img/slider/one.jpg';
+import two from '../../../img/slider/two.jpg';
+import three from '../../../img/slider/three.jpg';
+
 class SliderMain extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      oldSlide: 0,
+      activeSlide: 0,
+      activeSlide2: 0
+    };
+    // START for ie
+    if (typeof Object.assign != 'function') {
+      Object.assign = function(target) {
+        if (target == null) {
+          throw new TypeError('Cannot convert undefined or null to object');
+        }
+        target = Object(target);
+        for (var index = 1; index < arguments.length; index++) {
+          var source = arguments[index];
+          if (source != null) {
+            for (var key in source) {
+              if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+              }
+            }
+          }
+        }
+        return target;
+      };
+    }
+    // END for ie
+  }
   render() {
     var settings = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      fade: true,
+      adaptiveHeight: true,
+      arrows: false
+      // beforeChange: (current, next) => this.setState({ oldSlide: current, activeSlide: next }),
+      // afterChange: (current) => this.setState({ activeSlide2: current })
     };
     return (
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
+      <div className="slider-wrapper">
+        <div className="container">
+          <h1>Мы – Seven Degrees. Создаем digital-продукты для бизнеса</h1>
         </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
+        <Slider {...settings}>
+          <div className="slider-wrapp">
+            <img src={one} alt="slider" />
+            <div className="bg" />
+          </div>
+          <div className="slider-wrapp">
+            <img src={two} alt="slider" />
+            <div className="bg" />
+          </div>
+          <div className="slider-wrapp">
+            <img src={three} alt="slider" />
+            <div className="bg" />
+          </div>
+        </Slider>
+      </div>
     );
   }
 }
