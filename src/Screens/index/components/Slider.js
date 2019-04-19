@@ -36,15 +36,19 @@ class SliderMain extends Component {
     // END for ie
   }
   render() {
+    // https://react-slick.neostack.com/docs/api
     var settings = {
-      dots: true,
+      autoplay: true,
+      dots: false,
       infinite: true,
       speed: 500,
+      autoplaySpeed: 5000,
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
       adaptiveHeight: true,
-      arrows: false
+      arrows: false,
+      pauseOnHover: false
       // beforeChange: (current, next) => this.setState({ oldSlide: current, activeSlide: next }),
       // afterChange: (current) => this.setState({ activeSlide2: current })
     };
@@ -54,17 +58,26 @@ class SliderMain extends Component {
           <h1>Мы – Seven Degrees. Создаем digital-продукты для бизнеса</h1>
         </div>
         <Slider {...settings}>
-          <div className="slider-wrapp">
+          <div className="slider-item-wrapper">
             <img src={one} alt="slider" />
             <div className="bg" />
+            <div className="container">
+              <h5>*Интернет-магазин Infinity Lashes</h5>
+            </div>
           </div>
-          <div className="slider-wrapp">
+          <div className="slider-item-wrapper">
             <img src={two} alt="slider" />
             <div className="bg" />
+            <div className="container">
+              <h5>*Интернет-магазин Infinity Lashes</h5>
+            </div>
           </div>
-          <div className="slider-wrapp">
+          <div className="slider-item-wrapper">
             <img src={three} alt="slider" />
             <div className="bg" />
+            <div className="container">
+              <h5>*Интернет-магазин Infinity Lashes</h5>
+            </div>
           </div>
         </Slider>
       </div>
