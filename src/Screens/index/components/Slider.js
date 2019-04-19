@@ -69,14 +69,14 @@ class SliderMain extends Component {
             <img src={two} alt="slider" />
             <div className="bg" />
             <div className="container">
-              <h5>*Интернет-магазин Infinity Lashes</h5>
+              <h5>*Корпоративный сайт Borsa</h5>
             </div>
           </div>
           <div className="slider-item-wrapper">
             <img src={three} alt="slider" />
             <div className="bg" />
             <div className="container">
-              <h5>*Интернет-магазин Infinity Lashes</h5>
+              <h5>*Приложение Babyfaine</h5>
             </div>
           </div>
         </Slider>
