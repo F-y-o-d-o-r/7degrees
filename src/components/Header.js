@@ -6,11 +6,11 @@ import logo from '../img/logo.png';
 class Header extends Component {
   _request = (e) => {
     e.preventDefault();
-    let nav = document.querySelectorAll('header nav a');
-    console.log(nav);
-    nav.forEach((params) => {
-      console.log(params);
-    });
+    console.log('_request');
+    // let nav = document.querySelectorAll('header nav a');
+    // for (let index = 0; index < nav.length; index++) {
+    //   console.log(nav[index]);
+    // }
   };
   _changeLanguage = (e) => {
     e.preventDefault();
