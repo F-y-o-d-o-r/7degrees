@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "id": "01",
+      "header": "Борса",
+      "tags": [ "#Дизайн", "#Разработка", "#Сайт" ],
+      "images": [ "borsa.jpg" ]
+    },
+    {
+      "id": "02",
+      "header": "Зачёт",
+      "tags": [ "#Разработка", "#Сайт" ],
+      "images": [ "zachet.jpg" ]
+    },
+    {
+      "id": "03",
+      "header": "Infinity-lashes",
+      "tags": [ "#Брендинг", "#Дизайн", "#Разработка", "#Сайт", "#Интернет-магазин" ],
+      "images": [ "infinity.jpg" ]
+    },
+    {
+      "id": "04",
+      "header": "Babyfein",
+      "tags": [ "#Брендинг", "#Дизайн", "#Разработка", "#Приложение", "iOS", "Android" ],
+      "images": [ "babyfein.jpg" ]
+    },
+    {
+      "id": "05",
+      "header": "Waak-versicherungen",
+      "tags": [ "#Дизайн", "#Разработка", "#Лэндинг пейдж" ],
+      "images": [ "waak.jpg" ]
+    },
+    {
+      "id": "06",
+      "header": "LS Group",
+      "tags": [ "#Дизайн", "#Разработка", "#Сайт", "#Интернет-магазин" ],
+      "images": [ "lsgl.jpg" ]
+    }
+  ]
+}
