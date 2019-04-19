@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SliderMain } from './components';
+import { SliderMain, Projects, Archive } from './components';
 
 class IndexScreen extends Component {
   // constructor(props) {
@@ -12,7 +12,8 @@ class IndexScreen extends Component {
     return (
       <div>
         <SliderMain />
-        <h1>indexScreen</h1>
+        <Projects />
+        <Archive />
       </div>
     );
   }
