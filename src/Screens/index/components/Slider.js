@@ -53,7 +53,7 @@ class SliderMain extends Component {
       // afterChange: (current) => this.setState({ activeSlide2: current })
     };
     return (
-      <div className="slider-wrapper">
+      <div className="main-slider-wrapper">
         <div className="container">
           <h1>Мы – Seven Degrees. Создаем digital-продукты для бизнеса</h1>
         </div>
