@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Header } from './components';
 
 class AboutScreen extends Component {
   render() {
     return (
-      <div>
-        <h1>about</h1>
-      </div>
+      <section className="screen-about">
+        <Header />
+      </section>
     );
   }
 }
