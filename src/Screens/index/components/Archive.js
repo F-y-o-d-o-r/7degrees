@@ -34,7 +34,7 @@ class Archive extends Component {
           <h2>Архив работ:</h2>
           <div className="archive-wrapper">
             {data ? (
-              data.map((data) => (
+              data.reverse().map((data) => (
                 <div className="archive-items">
                   <div className="archive-year">{data.object.year}</div>
                   <div className="archive-projects-wrapper">
@@ -53,12 +53,7 @@ class Archive extends Component {
                           <div className="body">{data.body}</div>
                           <div className="tags">{data.tags}</div>
                         </div>
-                        <a
-                          href="http://xn--80actcgauhukdsp.xn--p1ai/"
-                          className="url"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={data.url} className="url" target="_blank" rel="noopener noreferrer">
                           {data.url}
                         </a>
                       </div>
