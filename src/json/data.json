@@ -10,13 +10,13 @@
       "id": "02",
       "header": "Зачёт!",
       "tags": [ "#Разработка", "#Сайт" ],
-      "images": [ "zachet.jpg" ]
+      "images": [ "zachet.jpg", "zachet.jpg" ]
     },
     {
       "id": "03",
       "header": "Infinity-lashes",
       "tags": [ "#Брендинг", "#Дизайн", "#Разработка", "#Сайт", "#Интернет-магазин" ],
-      "images": [ "infinity.jpg" ]
+      "images": [ "infinity.jpg", "infinity.jpg" ]
     },
     {
       "id": "04",

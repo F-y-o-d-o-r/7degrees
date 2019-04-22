@@ -13,9 +13,9 @@ export default class ProjectSlider extends Component {
     // https://react-slick.neostack.com/docs/api
     var settings = {
       autoplay: true,
-      dots: false,
-      arrows: false,
-      adaptiveHeight: true
+      dots: true,
+      arrows: false
+      // adaptiveHeight: true
       // infinite: true,
       // speed: 500,
       // autoplaySpeed: 5000,
@@ -28,7 +28,15 @@ export default class ProjectSlider extends Component {
     return (
       <div className="product-slider-wrapper">
         <Slider {...settings}>
-          {imgs ? imgs.map((img) => <img key={img} src={'img/projects/' + img} alt="slider" />) : null}
+          {imgs ? (
+            imgs.map((img) => (
+              <div key={img}>
+                <div className="img" style={{ backgroundImage: 'url("img/projects/' + img + '")' }} />
+              </div>
+            ))
+          ) : null}
+
+          {/* {imgs ? imgs.map((img) => <img key={img} src={'img/projects/' + img} alt="slider" />) : null} */}
         </Slider>
       </div>
     );

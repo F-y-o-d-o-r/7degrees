@@ -1,10 +1,23 @@
 .product-slider-wrapper
   width: 400px
   height: 400px
-  border-radius: 5px
+  border-radius: 7px
   overflow: hidden
   .slick-slider,
   .slick-slider img,
   .slick-slide > div
     height: 400px
-
+  .slick-slide > div
+    position: relative
+  .img
+    border-radius: 0
+  .slick-dots
+    bottom: 31px
+    width: auto
+    right: 33px
+    li
+      margin: 0
+      width: 15px
+    button
+      &::before
+        font-size: 9px

@@ -38,7 +38,7 @@ class SliderMain extends Component {
   render() {
     // https://react-slick.neostack.com/docs/api
     var settings = {
-      // autoplay: true,
+      autoplay: true,
       dots: false,
       infinite: true,
       speed: 500,
@@ -57,7 +57,11 @@ class SliderMain extends Component {
       // centerMode: true
       // beforeChange: (current, next) => this.setState({ oldSlide: current, activeSlide: next }),
       afterChange: (current) => {
+        let allSlides = document.querySelectorAll('.main-slider-wrapper img');
         let activeImg = document.querySelector('.main-slider-wrapper .slick-active img');
+        for (let i = 0; i < allSlides.length; i++) {
+          allSlides[i].style.transform = 'scale(1)';
+        }
         activeImg.style.transform = 'scale(1.3)';
       }
     };
