@@ -54,7 +54,6 @@ class SliderMain extends Component {
           let firstImg = document.querySelector('.main-slider-wrapper .slick-active img');
           firstImg.style.transform = 'scale(1.3)';
         }, 10),
-      // centerMode: true
       // beforeChange: (current, next) => this.setState({ oldSlide: current, activeSlide: next }),
       afterChange: (current) => {
         let allSlides = document.querySelectorAll('.main-slider-wrapper img');
