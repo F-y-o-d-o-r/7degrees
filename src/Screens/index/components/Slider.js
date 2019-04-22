@@ -52,7 +52,9 @@ class SliderMain extends Component {
       onInit: () =>
         setTimeout(() => {
           let firstImg = document.querySelector('.main-slider-wrapper .slick-active img');
-          firstImg.style.transform = 'scale(1.3)';
+          if (firstImg) {
+            firstImg.style.transform = 'scale(1.3)';
+          }
         }, 10),
       // beforeChange: (current, next) => this.setState({ oldSlide: current, activeSlide: next }),
       afterChange: (current) => {
