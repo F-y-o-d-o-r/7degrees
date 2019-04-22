@@ -19,17 +19,8 @@ class Archive extends Component {
   }
   render() {
     let { data } = this.state;
-    // console.log(data.year);
-    if (data) {
-      data.map((data) =>
-        data.object.projects.map((data) => {
-          console.log(data);
-        })
-      );
-    }
-
     return (
-      <section className="archive-wrapper">
+      <section className="archives-wrapper">
         <div className="container">
           <h2>Архив работ:</h2>
           <div className="archive-wrapper">

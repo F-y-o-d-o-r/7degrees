@@ -10,11 +10,11 @@ class IndexScreen extends Component {
   // }
   render() {
     return (
-      <div>
+      <>
         <SliderMain />
         <Projects />
         <Archive />
-      </div>
+      </>
     );
   }
 }
