@@ -1,0 +1,52 @@
+.archive-wrapper
+  .container
+    h2
+      padding-top: 22px
+      padding-bottom: 105px
+      +fm
+      font-size: 30px
+    .archive-items
+      display: flex
+      border-bottom: 1px solid $lines
+      margin-bottom: 40px
+      .archive-year
+        flex-basis: 220px
+        +fm
+        font-size: 24px
+        color: $year
+      .archive-projects-wrapper
+        flex-grow: 1
+      .archive-item
+        margin-bottom: 40px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        padding-bottom: 42px
+        border-bottom: 1px solid $lines
+        &:last-of-type
+          border-bottom: none
+          margin-bottom: 0
+        .left-part
+          .header
+            +fr
+            font-size: 20px
+            margin-bottom: 20px
+          .url-mobile
+            display: none
+            padding-right: 0
+          .body
+            +fr
+            font-size: 14px
+            line-height: 22px
+            margin-bottom: 20px
+          .tags
+            +fr
+            font-size: 14px
+            color: $text
+        .url
+          color: $red
+          +fm
+          font-size: 16px
+          line-height: 25px
+          padding-right: 110px
