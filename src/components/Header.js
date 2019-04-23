@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
+import { Request } from './index';
 import logo from '../img/logo.png';
 
 class Header extends Component {
@@ -39,6 +40,7 @@ class Header extends Component {
             </nav>
           </header>
         </div>
+        <Request />
       </div>
     );
   }
