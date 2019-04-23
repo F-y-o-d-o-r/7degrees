@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 
 export default class Direction extends Component {
   render() {
+    let {data} = this.props;
     return (
-      <div className="direction-wrapper">
-        <div className="direction-num">01</div>
-        <div className="direction-header">Веб-Разработка</div>
+      <>
+      {data ? data.map((data)=>(
+        <div className="direction-wrapper">
+        <div className="direction-num">{data.num}</div>
+        <div className="direction-header">{data.header}</div>
         <div className="direction-body">
-          Разработка веб-сайтов, сервисов любого уровня сложности. Выполняем весь цикл работ: проектириуем, рисуем
-          дизайн, верстаем, программируем, наполняем
+          {data.body}
         </div>
       </div>
+      )) : null
+      }
+      </>
     );
   }
 }
