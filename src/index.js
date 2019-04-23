@@ -16,6 +16,8 @@ const messages = {
 };
 // const language = navigator.language.split(/[-_]/)[0];
 const language = 'ru';
+// localStorage.setItem('username', 'John');
+// console.log(localStorage.getItem('username'));
 
 ReactDOM.render(
   <IntlProvider locale={language} messages={messages[language]}>
