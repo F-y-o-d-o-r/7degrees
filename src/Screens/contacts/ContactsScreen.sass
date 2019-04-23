@@ -1,0 +1,55 @@
+section.contacts
+  background-color: $bgc
+  margin-bottom: 340px
+  h1
+    margin-top: 143px
+    +fm
+    line-height: 1.3
+    font-size: 48px
+    margin-bottom: 80px
+    max-width: 840px
+  .contacts-wrapper
+    display: flex
+    justify-content: space-between
+    margin-bottom: 114px
+    padding-right: 101px
+    &>*
+      display: flex
+      flex-direction: column
+      &:last-of-type
+        svg
+          margin-bottom: 30px
+      span:first-of-type
+        font-size: 21px
+        +fr
+        line-height: 1.3
+        margin-bottom: 26px
+        color: $year
+      a
+        color: #ffffff
+        font-size: 16px
+        line-height: 1.6
+  .social-wrapper
+    padding-bottom: 200px
+    h3
+      margin-bottom: 67px
+      font-size: 30px
+      line-height: 1.3
+      +fm
+    .circle-wrapper
+      display: flex
+      .circle
+        height: 70px
+        width: 70px
+        background-color: #fff
+        margin-right: 150px
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        &:last-of-type
+          margin-right: 0
+        a
+          display: block
+          height: 100%
+          width: 100%
