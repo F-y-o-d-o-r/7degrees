@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Directions } from './components';
+import { Header, Directions, Technologies, Clients } from './components';
 
 class AboutScreen extends Component {
   render() {
@@ -7,6 +7,8 @@ class AboutScreen extends Component {
       <section className="screen-about">
         <Header />
         <Directions />
+        <Technologies />
+        <Clients />
       </section>
     );
   }
