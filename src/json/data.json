@@ -4,37 +4,43 @@
       "id": "01",
       "header": "Борса",
       "tags": [ "#Дизайн", "#Разработка", "#Сайт" ],
-      "images": [ "borsa.jpg" ]
+      "images": [ "borsa.jpg" ],
+      "text": "Сверстали и запрограммировали крупный онлайн-сервис для студентов"
     },
     {
       "id": "02",
       "header": "Зачёт!",
       "tags": [ "#Разработка", "#Сайт" ],
-      "images": [ "zachet.jpg", "zachet.jpg" ]
+      "images": [ "zachet.jpg", "zachet.jpg" ],
+      "text": "Сверстали и запрограммировали крупный онлайн-сервис для студентов"
     },
     {
       "id": "03",
       "header": "Infinity-lashes",
       "tags": [ "#Брендинг", "#Дизайн", "#Разработка", "#Сайт", "#Интернет-магазин" ],
-      "images": [ "infinity.jpg", "infinity.jpg" ]
+      "images": [ "infinity.jpg", "infinity.jpg" ],
+      "text": "Сверстали и запрограммировали крупный онлайн-сервис для студентов"
     },
     {
       "id": "04",
       "header": "Babyfein",
       "tags": [ "#Брендинг", "#Дизайн", "#Разработка", "#Приложение", "#iOS", "#Android" ],
-      "images": [ "babyfein.jpg", "babyfein.jpg", "babyfein.jpg" ]
+      "images": [ "babyfein.jpg", "babyfein.jpg", "babyfein.jpg" ],
+      "text": "Сверстали и запрограммировали крупный онлайн-сервис для студентов"
     },
     {
       "id": "05",
       "header": "Waak-versicherungen",
       "tags": [ "#Дизайн", "#Разработка", "#Лэндинг пейдж" ],
-      "images": [ "waak.jpg" ]
+      "images": [ "waak.jpg" ],
+      "text": "Сверстали и запрограммировали крупный онлайн-сервис для студентов"
     },
     {
       "id": "06",
       "header": "LS Group",
       "tags": [ "#Дизайн", "#Разработка", "#Сайт", "#Интернет-магазин" ],
-      "images": [ "lsgl.jpg" ]
+      "images": [ "lsgl.jpg" ],
+      "text": "Сверстали и запрограммировали крупный онлайн-сервис для студентов"
     }
   ],
   "archive": [

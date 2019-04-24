@@ -3,6 +3,13 @@
   margin-left: 20px
   margin-bottom: 48px
   position: relative
+  overflow: hidden
+  +trans()
+  &:hover
+    .hover-stroke
+      left: 40px
+    .hover
+      opacity: 1
   .img
     height: 400px
     width: 400px
@@ -10,6 +17,26 @@
     background-size: cover
     background-repeat: no-repeat
     background-position: center center
+  .hover
+    height: 400px
+    width: 400px
+    background-color: #fffffff5
+    border-radius: 7px
+    position: absolute
+    top: 0
+    color: #1c1c1c
+    +fr
+    font-size: 16px
+    line-height: 1.6
+    padding: 50px 40px
+    box-sizing: border-box
+    opacity: 0
+    +trans()
+  .hover-stroke
+    position: absolute
+    bottom: 46px
+    left: -40px
+    +trans()
   h6
     +fr
     font-size: 24px
