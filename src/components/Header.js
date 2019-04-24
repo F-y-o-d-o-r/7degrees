@@ -11,7 +11,11 @@ class Header extends Component {
   };
   _changeLanguage = (e) => {
     e.preventDefault();
-    console.log('_changeLanguage');
+    if (e.target.text === 'EN') {
+      e.target.text = 'RU';
+    } else {
+      e.target.text = 'EN';
+    }
   };
   render() {
     return (
