@@ -2,22 +2,44 @@
   margin-bottom: 340px
   padding-bottom: 200px
   background-color: $bgc
+  +r(550)
+    margin-bottom: 328px
+  +r(434)
+    margin-bottom: 400px
+    padding-bottom: 60px
+    overflow: hidden
   .container
     h2
       padding-top: 22px
       padding-bottom: 105px
       +fm
       font-size: 30px
+      +r(768)
+        padding-top: 0
+        padding-bottom: 60px
+      +r(414)
+        padding-bottom: 70px
+        font-size: 24px
     .archive-items
       display: flex
       border-bottom: 1px solid $lines
       margin-bottom: 40px
+      +r(1350)
+        flex-direction: column
       .archive-year
         flex-basis: 220px
         +fm
         font-size: 24px
         color: $year
         flex-shrink: 0
+        +r(1350)
+          flex-basis: auto
+          margin-bottom: 20px
+          margin-top: 17px
+        +r(414)
+          margin-top: 10px
+          margin-bottom: 15px
+          font-size: 20px
       .archive-projects-wrapper
         flex-grow: 1
       .archive-item
@@ -31,8 +53,14 @@
         box-sizing: border-box
         max-width: 1060px
         +trans()
+        +r(1350)
+          max-width: 100%
+          padding-top: 30px
+          padding-bottom: 30px
+        +r(414)
+          padding-top: 20px
+          padding-bottom: 20px
         &:hover
-          // padding-left: 40px
           background-color: #fff
           .left-part
             .header
@@ -45,15 +73,26 @@
         .left-part
           width: 730px
           margin-right: 40px
+          +r(1350)
+            margin-right: 0
+            width: 100%
           .header
             +fr
             font-size: 20px
             margin-bottom: 20px
             color: #ffffff
             +trans()
+            +r(414)
+              font-size: 18px
+              margin-bottom: 15px
           .url-mobile
             display: none
             padding-right: 0
+            margin-bottom: 15px
+            +r(1350)
+              display: block
+            +r(414)
+              font: 14px
           .body
             +fr
             font-size: 14px
@@ -61,6 +100,8 @@
             margin-bottom: 20px
             color: #ffffff
             +trans()
+            +r(414)
+              margin-bottom: 15px
           .tags
             +fr
             font-size: 14px
@@ -72,3 +113,5 @@
           font-size: 16px
           line-height: 1.6
           padding-right: 110px
+          +r(1350)
+            display: none
