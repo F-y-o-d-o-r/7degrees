@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import { Request } from './index';
+// import { Request } from './index';
 import logo from '../img/logo.png';
 
 class Header extends Component {
   _request = (e) => {
     e.preventDefault();
-    console.log('_request');
+    document.querySelector('.request-popup-wrapper').classList.add('active');
+    document.querySelector('.popup-bg').classList.add('active');
     // let nav = document.querySelectorAll('header nav a');
     // for (let index = 0; index < nav.length; index++) {
     //   console.log(nav[index]);
@@ -40,7 +41,7 @@ class Header extends Component {
             </nav>
           </header>
         </div>
-        <Request />
+        {/* <Request /> */}
       </div>
     );
   }

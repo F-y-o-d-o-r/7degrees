@@ -14,17 +14,30 @@ class Request extends Component {
       input.classList.add('filled');
     }
   };
+  _closePopup = () => {
+    document.querySelector('.request-popup-wrapper').classList.remove('active');
+    document.querySelector('.popup-bg').classList.remove('active');
+  };
   render() {
     return (
+      <>
+      <div className="popup-bg" onClick={this._closePopup}></div>
       <section className="request-popup-wrapper">
-        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          onClick={this._closePopup}
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <rect y="21.2132" width="30" height="2" transform="rotate(-45 0 21.2132)" fill="#201600" />
           <rect x="1.41406" width="30" height="2" transform="rotate(45 1.41406 0)" fill="#201600" />
         </svg>
         <h6 className="request-header">Оставить заявку</h6>
         <p className="request-subheader">Расскажите о вашем проекте. Мы свяжемся с вами и обсудим детали</p>
         <form>
-          <div className="form-group">
+          <div className="form-group error">
             <label htmlFor="name" className="form-label">
               Ваше имя
             </label>
@@ -39,7 +52,7 @@ class Request extends Component {
           </div>
           <br />
           <div className="row">
-            <div className="form-group">
+            <div className="form-group walid">
               <label htmlFor="email" className="form-label">
                 Ваше имя
               </label>
@@ -73,6 +86,7 @@ class Request extends Component {
           <p>Нажимая на кнопку «Отправить заявку», вы даёте согласие на обработку своих персональных данных</p>
         </form>
       </section>
+      </>
     );
   }
 }
