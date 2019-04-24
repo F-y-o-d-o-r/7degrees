@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Header, Footer, Request } from './components';
-import { IndexScreen, ContactsScreen, AboutScreen } from './Screens';
+import { IndexScreen, ContactsScreen, AboutScreen, Fof } from './Screens';
 import ScrollToTop from './components/ScrollToTop';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
             <Route path="/contacts" component={ContactsScreen} />
             <Route path="/about" component={AboutScreen} />
             {/* ?todo */}
-            {/* <Route component={NotFound} />  */}
+            <Route component={Fof} />
           </Switch>
           <Request />
           <Footer />
