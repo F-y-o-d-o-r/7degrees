@@ -21,13 +21,24 @@
       .archive-projects-wrapper
         flex-grow: 1
       .archive-item
-        margin-bottom: 40px
+        padding-top: 40px
+        padding-bottom: 42px
         display: flex
         align-items: center
         justify-content: space-between
         width: 100%
-        padding-bottom: 42px
         border-bottom: 1px solid $lines
+        box-sizing: border-box
+        max-width: 1060px
+        +trans()
+        &:hover
+          padding-left: 40px
+          background-color: #fff
+          .left-part
+            .header
+              color: #000000
+            .body
+              color: #000000
         &:last-of-type
           border-bottom: none
           margin-bottom: 0
@@ -38,6 +49,8 @@
             +fr
             font-size: 20px
             margin-bottom: 20px
+            color: #ffffff
+            +trans()
           .url-mobile
             display: none
             padding-right: 0
@@ -46,6 +59,8 @@
             font-size: 14px
             line-height: 1.6
             margin-bottom: 20px
+            color: #ffffff
+            +trans()
           .tags
             +fr
             font-size: 14px

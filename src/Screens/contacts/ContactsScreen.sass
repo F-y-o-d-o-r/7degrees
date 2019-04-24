@@ -30,6 +30,9 @@ section.contacts
         color: #ffffff
         font-size: 16px
         line-height: 1.6
+        +trans()
+        &:hover
+          color: #1945E1
   .social-wrapper
     padding-bottom: 200px
     h3
@@ -48,6 +51,13 @@ section.contacts
         display: flex
         justify-content: center
         align-items: center
+        svg
+          path
+            +trans()
+        &:hover
+          svg
+            path
+              fill: #1945E1!important
         &:last-of-type
           margin-right: 0
         a
