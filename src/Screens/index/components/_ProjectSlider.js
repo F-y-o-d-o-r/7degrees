@@ -12,7 +12,7 @@ export default class ProjectSlider extends Component {
     let { imgs } = this.state;
     // https://react-slick.neostack.com/docs/api
     var settings = {
-      autoplay: true,
+      autoplay: false,
       dots: true,
       arrows: false
       // adaptiveHeight: true
