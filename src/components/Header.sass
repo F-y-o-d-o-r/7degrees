@@ -11,8 +11,9 @@ header
   align-items: center
   padding-top: 15px
   padding-bottom: 15px
-  +r(934)
-    max-width: 727px
+  nav
+    +r(700)
+      display: none
   img
     height: 45px
     width: 45px
@@ -23,6 +24,8 @@ header
     margin-right: 44px
     position: relative
     +trans()
+    +r(768)
+    margin-right: 30px
     &:hover
       color: $red
     &:after
@@ -43,3 +46,54 @@ header
       transform: translateX(-50%)
   a:last-of-type
     margin-right: 0
+  .mobile-popup-wrapper
+    display: flex
+    align-items: center
+    h5
+      +fr
+      font-size: 16px
+  .boorger-to-open
+    cursor: pointer
+    height: 20px
+    width: 30px
+    +trans()
+    position: relative
+    margin-left: 30px
+    span
+      height: 2px
+      width: 30px
+      background-color: #ffffff
+      display: block
+      position: absolute
+      opacity: 1
+      left: 0
+      +trans()
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2),
+      &:nth-child(3)
+        top: 7px
+      &:nth-child(4)
+        top: 14px
+    &.open
+      span:nth-child(1)
+        top: 7px
+        width: 0%
+        left: 50%
+    &.open
+      span:nth-child(2)
+        -webkit-transform: rotate(45deg)
+        -moz-transform: rotate(45deg)
+        -o-transform: rotate(45deg)
+        transform: rotate(45deg)
+    &.open
+      span:nth-child(3)
+        -webkit-transform: rotate(-45deg)
+        -moz-transform: rotate(-45deg)
+        -o-transform: rotate(-45deg)
+        transform: rotate(-45deg)
+    &.open
+      span:nth-child(4)
+        top: 7px
+        width: 0%
+        left: 50%

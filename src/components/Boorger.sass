@@ -1,0 +1,55 @@
+.boorger-wrapper
+  position: fixed
+  right: -100%
+  left: -100%
+  background-color: $bgc
+  z-index: 9
+  padding: 125px 20px 20px
+  +trans()
+  &.open
+    overflow: auto
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+  +r(414)
+    padding: 125px 15px 15px
+  .boorger-content
+  nav
+    display: flex
+    flex-direction: column
+    border-bottom: 1px solid #7a7a7a
+    padding-bottom: 86px
+    margin-bottom: 70px
+    a
+      +fr
+      font-size: 24px
+      color: #ffffff
+      margin-bottom: 25px
+      &:last-of-type
+        margin-bottom: 0
+  .contacts-wrapper
+    a
+      +fr
+      font-size: 16px
+      color: #ffffff
+      display: block
+      +trans()
+      margin-bottom: 30px
+      &:hover
+        color: #1945E1
+  .social-wrapper
+    padding-bottom: 30px
+    .circle-wrapper
+      .circle
+        height: 40px
+        width: 40px
+        margin-right: 40px
+        svg
+          height: 15px
+    .copyright
+      +fr
+      font-size: 16px
+      color: #ffffff
+      display: block
+      margin-bottom: 30px

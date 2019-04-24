@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Header, Footer, Request } from './components';
+import { Footer, Request, Boorger } from './components';
 import { IndexScreen, ContactsScreen, AboutScreen, Fof } from './Screens';
+import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
 
 import { IntlProvider, addLocaleData } from 'react-intl';
@@ -31,6 +32,7 @@ class App extends Component {
               <Route component={Fof} />
             </Switch>
             <Request />
+            <Boorger />
             <Footer />
           </ScrollToTop>
         </BrowserRouter>
