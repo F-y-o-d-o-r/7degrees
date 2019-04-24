@@ -10,11 +10,11 @@ class IndexScreen extends Component {
   // }
   render() {
     return (
-      <>
+      <React.Fragment>
         <SliderMain />
         <Projects />
         <Archive />
-      </>
+      </React.Fragment>
     );
   }
 }
