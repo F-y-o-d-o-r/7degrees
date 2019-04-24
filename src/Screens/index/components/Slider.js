@@ -46,7 +46,7 @@ class SliderMain extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
-      adaptiveHeight: true,
+      adaptiveHeight: false,
       arrows: false,
       pauseOnHover: false,
       onInit: () =>

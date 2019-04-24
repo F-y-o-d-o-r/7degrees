@@ -4,16 +4,25 @@
   .slick-slider,
   .slick-slider img,
   .slick-slide > div
-    max-height: 640px
+    height: 640px
     overflow: hidden
+    +r(768)
+      height: 590px
   .slick-slider img
     display: block
-    max-width: 100%
-    max-height: 100%
+    height: 100%
     position: relative
     transform: scale(1)
     transition: transform 30s
-    margin-top: -15%
+    margin-top: -20%
+    +r(1024)
+      margin-top: 5%
+      width: 100%
+    +r(768)
+      height: 590px
+      height: 100%
+      width: 150%
+      margin-top: 0
   .bg
       position: absolute
       content: ''
@@ -42,6 +51,16 @@
     +fm
     font-size: 60px
     line-height: 1.2
+    +r(1350)
+      left: 20px
+      right: 20px
+    +r(800)
+      font-size: 50px
+      line-height: normal
+      max-width: 100%
+    +r(680)
+      font-size: 36px
+      top: 200px
   h5
     color: #ffffff
     +fr

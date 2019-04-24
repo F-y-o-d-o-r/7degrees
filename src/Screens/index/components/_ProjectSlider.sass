@@ -3,10 +3,22 @@
   height: 400px
   border-radius: 7px
   overflow: hidden
+  +r(1350)
+    height: 354px
+    width: 349px
+  +r(784)
+    height: 390px
+    width: 384px
+  +r(470)
+    width: 100%
   .slick-slider,
   .slick-slider img,
   .slick-slide > div
     height: 400px
+    +r(1350)
+      height: 354px
+    +r(784)
+      height: 390px
   .slick-slide > div
     position: relative
   .img
@@ -15,6 +27,8 @@
     bottom: 31px
     width: auto
     right: 33px
+    +r(1350)
+      bottom: 20px
     li
       margin: 0
       width: 15px
