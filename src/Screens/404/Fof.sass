@@ -9,14 +9,26 @@ section.fof
     width: 55px
     margin-top: 70px
     margin-bottom: 95px
+    +r(768)
+      margin-top: 100px
+      margin-bottom: 120px
+    +r(414)
+      margin-top: 50px
+      margin-bottom: 90px
   h1
     +fm
     font-size: 170px
     margin-bottom: 57px
+    +r(414)
+      font-size: 140px
+      margin-bottom: 70px
   h2
     +fr
     font-size: 30px
     margin-bottom: 5px
+    +r(414)
+      font-size: 24px
+      margin-bottom: 20px
   p
     max-width: 620px
     text-align: center
@@ -24,6 +36,14 @@ section.fof
     +fb
     line-height: 1.6
     margin-bottom: 70px
+    +r(768)
+      margin-bottom: 100px
+      max-width: 536px
+      padding-left: 15px
+      padding-right: 15px
+    +r(414)
+      max-width: 100%
+      margin-bottom: 50px
   a.btn
     display: inline-block
     color: #ffffff
@@ -33,7 +53,13 @@ section.fof
     border-radius: 4px
     text-align: center
     line-height: 60px
+    margin-bottom: 96px
     +trans()
+    +r(768)
+      margin-bottom: 174px
+    +r(414)
+      width: 95%
+      margin-bottom: 76px
     &:hover
       background-color: #d70101
   
