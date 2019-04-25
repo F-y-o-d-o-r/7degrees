@@ -72,7 +72,7 @@ class Header extends Component {
                 Оставить заявку
               </a>
               <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
-                EN
+                RU
               </a>
             </nav>
             <div className="mobile-popup-wrapper">
