@@ -10,6 +10,7 @@ class Boorger extends Component {
     e.preventDefault();
     document.querySelector('.request-popup-wrapper').classList.add('active');
     document.querySelector('.popup-bg').classList.add('active');
+    this._linkClick();
   };
   _changeLanguage = (e) => {
     e.preventDefault();
