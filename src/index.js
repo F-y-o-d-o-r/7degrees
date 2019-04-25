@@ -19,12 +19,13 @@ import * as serviceWorker from './serviceWorker';
 // const language = 'ru';
 // localStorage.setItem('username', 'John');
 // console.log(localStorage.getItem('username'));
-document.addEventListener('DOMContentLoaded', visibleWebSite);
-function visibleWebSite() {
+
+// document.addEventListener('DOMContentLoaded', visibleWebSite);
+window.onload = function visibleWebSite() {
   setTimeout(() => {
     document.querySelector('html').style.opacity = 1;
-  }, 500);
-}
+  }, 50);
+};
 ReactDOM.render(
   // <IntlProvider locale={language} messages={messages[language]}>
   <App />,
