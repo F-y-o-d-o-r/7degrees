@@ -11,14 +11,37 @@ section.contacts
     font-size: 48px
     margin-bottom: 80px
     max-width: 840px
+    +r(768)
+      font-size: 36px
+      margin-top: 125px
+      max-width: 100%
+      margin-bottom: 90px
+    +r(414)
+      font-size: 30px
+      margin-bottom: 50px
   .contacts-wrapper
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     margin-bottom: 114px
     padding-right: 101px
+    +r(1350)
+      padding-right: 0
+    +r(930)
+      margin-bottom: 30px
+    +r(477)
+      margin-bottom: 40px
     &>*
       display: flex
       flex-direction: column
+      +r(930)
+        width: 33%
+        margin-bottom: 60px
+      +r(777)
+        width: 50%
+      +r(477)
+        margin-bottom: 40px
+        width: 100%
       &:last-of-type
         svg
           margin-bottom: 25px
@@ -36,14 +59,17 @@ section.contacts
         &:hover
           color: #1945E1
 .social-wrapper
-  padding-bottom: 200px
+  // padding-bottom: 200px
   h3
     margin-bottom: 67px
     font-size: 30px
     line-height: 1.3
     +fm
+    +r(414)
+      font-size: 24px
   .circle-wrapper
     display: flex
+    flex-wrap: wrap
     .circle
       height: 70px
       width: 70px
@@ -53,6 +79,11 @@ section.contacts
       display: flex
       justify-content: center
       align-items: center
+      +r(800)
+        margin-right: 140px
+      +r(768)
+        margin-right: 60px
+        margin-bottom: 60px
       svg
         path
           +trans()
@@ -62,6 +93,8 @@ section.contacts
             fill: #1945E1!important
       &:last-of-type
         margin-right: 0
+        +r(768)
+          margin-right: 60px
       a
         display: block
         height: 100%
