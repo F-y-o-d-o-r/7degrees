@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 class Footer extends Component {
-  componentDidMount() {
-    setTimeout(() => {
-      document.querySelector('body').style.opacity = 1;
-    }, 500);
-  }
   render() {
     return (
       <div className="footer">

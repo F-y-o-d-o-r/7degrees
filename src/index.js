@@ -19,7 +19,12 @@ import * as serviceWorker from './serviceWorker';
 // const language = 'ru';
 // localStorage.setItem('username', 'John');
 // console.log(localStorage.getItem('username'));
-
+document.addEventListener('DOMContentLoaded', visibleWebSite);
+function visibleWebSite() {
+  setTimeout(() => {
+    document.querySelector('html').style.opacity = 1;
+  }, 500);
+}
 ReactDOM.render(
   // <IntlProvider locale={language} messages={messages[language]}>
   <App />,
