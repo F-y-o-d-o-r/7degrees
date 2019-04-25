@@ -174,14 +174,25 @@
     top: 40%
     .sent-header-wrapper
       display: flex
+      +r(610)
+        flex-direction: column-reverse
       img
         width: 48px
         height: 50px
         margin-left: 20px
+        +r(610)
+          margin-left: 0
+          margin-bottom: 24px
     .header-sent
       +fr
       font-size: 48px
       margin-bottom: 30px
+      +r(414)
+        font-size: 30px
+        margin-bottom: 20px
     .p-sent
       +fr
       font-size: 18px
+      margin-top: 0
+      +r(414)
+        font-size: 16px
