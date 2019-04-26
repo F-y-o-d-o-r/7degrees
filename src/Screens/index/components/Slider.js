@@ -80,8 +80,9 @@ class SliderMain extends Component {
           for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', this._onDotsClick);
           }
-
-          buttons[0].classList.add('slick-was-before');
+          if (buttons[0]) {
+            buttons[0].classList.add('slick-was-before');
+          }
           let firstImg = document.querySelector('.main-slider-wrapper .slick-active img');
           if (firstImg) {
             firstImg.style.transform = 'scale(1.3)';

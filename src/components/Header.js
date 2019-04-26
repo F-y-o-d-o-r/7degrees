@@ -13,7 +13,7 @@ class Header extends Component {
   componentDidMount() {
     this._checkCurrentPage();
 
-    // heder scroll
+    // START custom heder scroll
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
     window.onscroll = () => {
@@ -66,16 +66,20 @@ class Header extends Component {
           break;
       }
     };
+    // END custom heder scroll
+
     // heder scroll
-    // let controllerContacts = new ScrollMagic.Controller();
-    // new ScrollMagic.Scene({
-    //   triggerElement: 'body',
-    //   offset: 1000,
-    //   duration: 0
-    // })
-    //   .setClassToggle('.header-wrapper', 'black-bg')
-    //   //.addIndicators({ name: 'smoth-show-from-div' })
-    //   .addTo(controllerContacts);
+    // if (this.state.currentPage === 'Портфолио') {
+    //   let controllerContacts = new ScrollMagic.Controller();
+    //   new ScrollMagic.Scene({
+    //     triggerElement: '.projects',
+    //     offset: 200,
+    //     duration: 0
+    //   })
+    //     .setClassToggle('.header-wrapper', 'white-bg')
+    //     //.addIndicators({ name: 'smoth-show-from-div' })
+    //     .addTo(controllerContacts);
+    // }
   }
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
