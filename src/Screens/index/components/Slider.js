@@ -36,13 +36,14 @@ class SliderMain extends Component {
     // END for ie
   }
   render() {
+    // var buttons = document.querySelectorAll('.main-slider-wrapper .slick-dots li button');
     // https://react-slick.neostack.com/docs/api
     var settings = {
       autoplay: true,
-      dots: false,
+      dots: true,
       infinite: true,
       speed: 500,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 7000,
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
@@ -51,19 +52,34 @@ class SliderMain extends Component {
       pauseOnHover: false,
       onInit: () =>
         setTimeout(() => {
+          let buttons = document.querySelectorAll('.main-slider-wrapper .slick-dots li button');
+          buttons[0].classList.add('slick-was-before');
           let firstImg = document.querySelector('.main-slider-wrapper .slick-active img');
           if (firstImg) {
             firstImg.style.transform = 'scale(1.3)';
           }
-        }, 10),
-      // beforeChange: (current, next) => this.setState({ oldSlide: current, activeSlide: next }),
-      afterChange: (current) => {
-        let allSlides = document.querySelectorAll('.main-slider-wrapper img');
-        let activeImg = document.querySelector('.main-slider-wrapper .slick-active img');
-        for (let i = 0; i < allSlides.length; i++) {
-          allSlides[i].style.transform = 'scale(1)';
+        }, 2000),
+      beforeChange: (current, next) => {
+        let buttons = document.querySelectorAll('.main-slider-wrapper .slick-dots li button');
+        if (current === buttons.length - 1) {
+          for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('slick-was-before');
+          }
         }
-        activeImg.style.transform = 'scale(1.3)';
+      },
+      afterChange: (current) => {
+        setTimeout(() => {
+          let buttons = document.querySelectorAll('.main-slider-wrapper .slick-dots li button');
+          buttons[current].classList.add('slick-was-before');
+
+          let allSlides = document.querySelectorAll('.main-slider-wrapper img');
+          let activeImg = document.querySelector('.main-slider-wrapper .slick-active img');
+          for (let i = 0; i < allSlides.length; i++) {
+            allSlides[i].style.transform = 'scale(1)';
+          }
+          activeImg.style.transform = 'scale(1.3)';
+        }, 2000);
+        // END img scale
       }
     };
     return (

@@ -65,7 +65,38 @@
     color: #ffffff
     +fr
     font-size: 14px
-  // .slick-slider
-  //   .slick-active
-  //     img
-  //       transform: scale(1.3)
+  .slick-dots
+    bottom: 0
+    display: flex!important
+    li
+      flex-grow: 1
+      height: 4px
+      margin: 0
+      // background-color: #fff
+      button
+        padding: 0
+        height: 4px
+        width: 100%
+        &:before
+          content: ''
+          background-color: #fff
+          height: 4px
+          width: 0
+      &.slick-active
+        button
+          &:before
+            background-color: #FF2929
+            animation: slide-progress 2s linear forwards
+            opacity: 1!important
+
+  button.slick-was-before
+    &:before
+      background-color: #FF2929!important
+      width: 100%!important
+      opacity: 1!important
+
+@keyframes slide-progress
+  0%
+    width: 0
+  100%
+    width: 100%
