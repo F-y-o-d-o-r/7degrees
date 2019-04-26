@@ -6,7 +6,8 @@ import logo from '../img/logo.png';
 
 class Header extends Component {
   state = {
-    currentPage: 'Портфолио'
+    currentPage: 'Портфолио',
+    firstPageScroll: true
   };
   componentDidMount() {
     this._checkCurrentPage();
