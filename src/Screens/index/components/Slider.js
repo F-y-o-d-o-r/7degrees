@@ -36,7 +36,6 @@ class SliderMain extends Component {
     // END for ie
   }
   _onDotsClick = (e) => {
-    // this._imageScale();
     this.slider.slickPause();
     setTimeout(() => {
       this.slider.slickPlay();
@@ -54,11 +53,7 @@ class SliderMain extends Component {
 
   _imageScale = () => {
     setTimeout(() => {
-      let allSlides = document.querySelectorAll('.main-slider-wrapper img');
       let activeImg = document.querySelector('.main-slider-wrapper .slick-active img');
-      for (let i = 0; i < allSlides.length; i++) {
-        allSlides[i].style.transform = 'scale(1)';
-      }
       activeImg.style.transform = 'scale(1.3)';
     }, 2000);
   };
