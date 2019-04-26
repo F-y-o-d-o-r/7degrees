@@ -91,6 +91,7 @@ class Header extends Component {
     switch (this.props.location.pathname) {
       case '/':
         currentPage = 'Портфолио';
+        document.querySelector('.header-wrapper').classList.remove('black-bg');
         break;
       case '/about':
         currentPage = 'О компании';
