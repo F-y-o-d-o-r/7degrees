@@ -54,7 +54,9 @@ class SliderMain extends Component {
   _imageScale = () => {
     setTimeout(() => {
       let activeImg = document.querySelector('.main-slider-wrapper .slick-active img');
-      activeImg.style.transform = 'scale(1.3)';
+      if (activeImg) {
+        activeImg.style.transform = 'scale(1.3)';
+      }
     }, 2000);
   };
 
