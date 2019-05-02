@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 
 import data from '../../../json/data.json';
-import one from '../../../img/slider/one.jpg';
-import two from '../../../img/slider/two.jpg';
-import three from '../../../img/slider/three.jpg';
 
 class SliderMain extends Component {
   constructor(props) {
@@ -129,7 +126,6 @@ class SliderMain extends Component {
           {slides ? (
             slides.map((slide) => (
               <div className="slider-item-wrapper" key={slide.id}>
-                {/* <img src={'img/big_slider/' + slide.src} alt="slider" /> */}
                 <div className="bg" style={{ backgroundImage: 'url(img/big_slider/' + slide.src + ')' }} />
                 <div className="container">
                   <h5>{slide.name}</h5>
