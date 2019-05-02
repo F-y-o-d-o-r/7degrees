@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-
+import ScrollMagic from 'scrollmagic';
+// import * as ScrollMagic from 'scrollmagic';
 import data from '../../../json/data.json';
+// var ScrollMagic = require('scrollmagic');
+// require('../../../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators');
 
 class Archive extends Component {
   state = {
@@ -16,6 +19,22 @@ class Archive extends Component {
         //? todo preloader ?
       }
     );
+
+    // START Year scroll
+    setTimeout(() => {
+      let controllerContacts = new ScrollMagic.Controller();
+      new ScrollMagic.Scene({
+        triggerElement: '.archive-items',
+        triggerHook: 0,
+        offset: -150,
+        // duration: '100%',
+        reverse: true
+      })
+        .setClassToggle('.archive-year', 'fixed-year')
+        .addIndicators({ name: 'smoth-show-from-div' })
+        .addTo(controllerContacts);
+    }, 1000);
+    // END Year scroll
   }
   render() {
     let { data } = this.state;
