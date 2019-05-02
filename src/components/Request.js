@@ -3,8 +3,23 @@ import React, { Component } from 'react';
 import sentimg from '../img/sent.png';
 
 class Request extends Component {
+  constructor(props) {
+    super(props);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
   state = {
-    sent: false
+    sent: false,
+    name: '',
+    email: '',
+    tel: '',
+    textarea: '',
+    emailValid: false,
+    emailVisited: false,
+    nameValid: false,
+    nameVisited: false,
+    telValid: false,
+    telVisited: false,
+    className: 'form-group'
   };
   _focused = (e) => {
     e.target.parentNode.classList.add('focused');
@@ -23,8 +38,97 @@ class Request extends Component {
     document.querySelector('.request-popup-wrapper').classList.remove('active');
     document.querySelector('.popup-bg').classList.remove('active');
   };
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState(
+      {
+        [name]: value
+      },
+      () => {
+        switch (name) {
+          case 'name':
+            this._onSubmitName(value);
+            break;
+          case 'email':
+            this._onSubmitEmail(value);
+            break;
+          case 'tel':
+            this._onSubmitTel(value);
+            break;
+          default:
+            break;
+        }
+      }
+    );
+  }
+  _onSubmitEmail = (email) => {
+    if (!this._validateEmail(this.state.email)) {
+      this.setState({ emailValid: false, emailVisited: true });
+    } else {
+      this.setState({ emailValid: true, emailVisited: true }, function() {});
+    }
+  };
+  _validateEmail = (email) => {
+    /*eslint-disable */
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /*eslint-enable */
+    return re.test(email);
+  };
+  _onSubmitName = () => {
+    if (!this._validateName(this.state.name)) {
+      this.setState({ nameValid: false, nameVisited: true });
+    } else {
+      this.setState({ nameValid: true, nameVisited: true }, function() {});
+    }
+  };
+  _validateName = (text) => {
+    var re = /^.{6,}$/;
+    return re.test(text);
+  };
+  _onSubmitTel = () => {
+    if (!this._validateTelInput(this.state.tel)) {
+      this.setState({ telValid: false, telVisited: true });
+    } else {
+      this.setState({ telValid: true, telVisited: true }, function() {});
+    }
+  };
+  _validateTelInput = (text) => {
+    var re = /^\d{10,}$/;
+    return re.test(text);
+  };
+  _fullSubmit = () => {
+    if (this.state.emailValid && this.state.telValid && this.state.name) {
+      this.setState({ formValid: true });
+    } else {
+      this.setState({ formValid: false });
+    }
+  };
+  _letterToSend = (e) => {
+    e.preventDefault();
+    if (this.state.formValid) {
+      console.log('sent');
+    } else {
+      console.log('not valid');
+    }
+  };
+
   render() {
-    let { sent } = this.state;
+    let {
+      sent,
+      name,
+      email,
+      tel,
+      textarea,
+      emailValid,
+      emailVisited,
+      nameValid,
+      nameVisited,
+      telValid,
+      telVisited
+    } = this.state;
     return (
       <React.Fragment>
         <div className="popup-bg" onClick={this._closePopup} />
@@ -44,7 +148,11 @@ class Request extends Component {
             <h6 className="request-header">Оставить заявку</h6>
             <p className="request-subheader">Расскажите о вашем проекте. Мы свяжемся с вами и обсудим детали</p>
             <form>
-              <div className="form-group error">
+              <div
+                className={
+                  !nameVisited ? 'form-group' : nameVisited & !nameValid ? 'form-group error' : 'form-group walid'
+                }
+              >
                 <label htmlFor="name" className="form-label">
                   Ваше имя
                 </label>
@@ -54,14 +162,23 @@ class Request extends Component {
                   id="name"
                   className="name form-input"
                   onFocus={this._focused}
-                  onBlur={this._blur}
+                  onBlur={(e) => {
+                    this._blur(e);
+                    this._fullSubmit();
+                  }}
+                  value={name}
+                  onChange={this.handleInputChange}
                 />
               </div>
               <br />
               <div className="row">
-                <div className="form-group walid">
+                <div
+                  className={
+                    !emailVisited ? 'form-group' : emailVisited & !emailValid ? 'form-group error' : 'form-group walid'
+                  }
+                >
                   <label htmlFor="email" className="form-label">
-                    Ваше имя
+                    Email
                   </label>
                   <input
                     type="email"
@@ -69,12 +186,21 @@ class Request extends Component {
                     id="email"
                     className="email form-input"
                     onFocus={this._focused}
-                    onBlur={this._blur}
+                    onBlur={(e) => {
+                      this._blur(e);
+                      this._fullSubmit();
+                    }}
+                    value={email}
+                    onChange={this.handleInputChange}
                   />
                 </div>
-                <div className="form-group">
+                <div
+                  className={
+                    !telVisited ? 'form-group' : telVisited & !telValid ? 'form-group error' : 'form-group walid'
+                  }
+                >
                   <label htmlFor="tel" className="form-label">
-                    Ваше имя
+                    Номер телефона
                   </label>
                   <input
                     type="tel"
@@ -82,14 +208,21 @@ class Request extends Component {
                     id="tel"
                     className="tel form-input"
                     onFocus={this._focused}
-                    onBlur={this._blur}
+                    onBlur={(e) => {
+                      this._blur(e);
+                      this._fullSubmit();
+                    }}
+                    value={tel}
+                    onChange={this.handleInputChange}
                   />
                 </div>
               </div>
               <br />
               <label htmlFor="textarea">Опишите ваш проект</label>
-              <textarea name="textarea" id="textarea" rows="10" />
-              <button type="submit">Отправить заявку</button>
+              <textarea name="textarea" id="textarea" rows="10" value={textarea} onChange={this.handleInputChange} />
+              <button type="submit" onClick={this._letterToSend}>
+                Отправить заявку
+              </button>
               <p>Нажимая на кнопку «Отправить заявку», вы даёте согласие на обработку своих персональных данных</p>
             </form>
           </section>
