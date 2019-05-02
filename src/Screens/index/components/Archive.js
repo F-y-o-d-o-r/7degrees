@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import ScrollMagic from 'scrollmagic';
-// import * as ScrollMagic from 'scrollmagic';
+// import ScrollMagic from 'scrollmagic';
+
 import data from '../../../json/data.json';
-// var ScrollMagic = require('scrollmagic');
-// require('../../../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators');
 
 class Archive extends Component {
   state = {
@@ -21,19 +19,30 @@ class Archive extends Component {
     );
 
     // START Year scroll
-    setTimeout(() => {
-      let controllerContacts = new ScrollMagic.Controller();
-      new ScrollMagic.Scene({
-        triggerElement: '.archive-items',
-        triggerHook: 0,
-        offset: -150,
-        // duration: '100%',
-        reverse: true
-      })
-        .setClassToggle('.archive-year', 'fixed-year')
-        .addIndicators({ name: 'smoth-show-from-div' })
-        .addTo(controllerContacts);
-    }, 1000);
+    // setTimeout(() => {
+    //   let controllerContacts = new ScrollMagic.Controller();
+    //   // new ScrollMagic.Scene({
+    //   //   triggerElement: '.archive-items',
+    //   //   triggerHook: 0,
+    //   //   offset: -150,
+    //   //   // duration: '100%',
+    //   //   reverse: true
+    //   // })
+    //   //   .setClassToggle('.archive-year', 'fixed-year')
+    //   //   // .addIndicators({ name: 'smoth-show-from-div' })
+    //   //   .addTo(controllerContacts);
+    //   let years = document.querySelectorAll('.archive-items');
+    //   for (let i = 0; i < years.length; i++) {
+    //     console.log(this);
+    //     new ScrollMagic.Scene({
+    //       triggerElement: years[i],
+    //       triggerHook: 0.5,
+    //       duration: '80%'
+    //     })
+    //       .setPin('.archive-year')
+    //       .addTo(controllerContacts);
+    //   }
+    // }, 1000);
     // END Year scroll
   }
   render() {
@@ -52,20 +61,28 @@ class Archive extends Component {
                       <div className="archive-item" key={data.header}>
                         <div className="left-part">
                           <div className="header">{data.header}</div>
-                          <a
-                            href="http://xn--80actcgauhukdsp.xn--p1ai/"
-                            className="url url-mobile"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {data.url}
-                          </a>
+                          {data.url.toLowerCase() === 'в разработке' ? (
+                            <span className="url url-mobile in-process">{data.url}</span>
+                          ) : (
+                            <a
+                              href={data.ruUrl || data.url}
+                              className="url url-mobile"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {data.url}
+                            </a>
+                          )}
                           <div className="body">{data.body}</div>
                           <div className="tags">{data.tags}</div>
                         </div>
-                        <a href={data.url} className="url" target="_blank" rel="noopener noreferrer">
-                          {data.url}
-                        </a>
+                        {data.url.toLowerCase() === 'в разработке' ? (
+                          <span className="url in-process">{data.url}</span>
+                        ) : (
+                          <a href={data.ruUrl || data.url} className="url" target="_blank" rel="noopener noreferrer">
+                            {data.url}
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>

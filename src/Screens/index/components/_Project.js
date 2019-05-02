@@ -30,7 +30,7 @@ export default class _Project extends Component {
           <ProjectSlider imgs={images} />
         )}
         <h6>{header}</h6>
-        <div className="tag-wrapper">{tags.map((tag) => <span key={tag}>{tag} </span>)}</div>
+        <div className="tag-wrapper">{tags.map((tag) => <span key={tag}>{tag}, </span>)}</div>
       </div>
     );
   }
