@@ -1,4 +1,66 @@
 {
+  "bigSlider": [
+    {
+      "id": "01",
+      "name": "*Infinity Lashes – Интернет-магазин",
+      "src": "Infinity-lashes/infinity_1.jpg"
+    },
+    {
+      "id": "02",
+      "name": "*Infinity Lashes – логотип и айдентика",
+      "src": "Infinity-lashes/infinity_2.jpg"
+    },
+    {
+      "id": "03",
+      "name": "*Infinity Lashes – логотип и айдентика",
+      "src": "Infinity-lashes/infinity_3.jpg"
+    },
+    {
+      "id": "04",
+      "name": "*Борса – корпоративный сайт",
+      "src": "borsa/borsa_1.jpg"
+    },
+    {
+      "id": "05",
+      "name": "*Борса – корпоративный сайт",
+      "src": "borsa/borsa_2.jpg"
+    },
+    {
+      "id": "06",
+      "name": "*Ураган-М – эмблема футбольной команды",
+      "src": "uragan/uragan_1.jpg"
+    },
+    {
+      "id": "07",
+      "name": "*Ураган-М – эмблема футбольной команды",
+      "src": "uragan/uragan_2.jpg"
+    },
+    {
+      "id": "08",
+      "name": "*Babylove – приложение iOS / Android",
+      "src": "babylove/babylove_1.jpg"
+    },
+    {
+      "id": "09",
+      "name": "*Babylove – логотип продукта",
+      "src": "babylove/babylove_2.jpg"
+    },
+    {
+      "id": "10",
+      "name": "*WAAK – динамические Landing Page",
+      "src": "waak/waak_1.jpg"
+    },
+    {
+      "id": "11",
+      "name": "*WAAK – динамические Landing Page",
+      "src": "waak/waak_2.jpg"
+    },
+    {
+      "id": "12",
+      "name": "*ЛС ГРУПП – корпоративный сайт + инетрнет-магазин",
+      "src": "lsgroup/lsgroup_1.jpg"
+    }
+  ],
   "projects": [
     {
       "id": "01",

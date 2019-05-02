@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 
+import data from '../../../json/data.json';
 import one from '../../../img/slider/one.jpg';
 import two from '../../../img/slider/two.jpg';
 import three from '../../../img/slider/three.jpg';
@@ -11,7 +12,8 @@ class SliderMain extends Component {
     this.state = {
       oldSlide: 0,
       activeSlide: 0,
-      activeSlide2: 0
+      activeSlide2: 0,
+      bigSlider: null
     };
     // START for ie
     if (typeof Object.assign != 'function') {
@@ -35,6 +37,17 @@ class SliderMain extends Component {
     }
     // END for ie
   }
+  componentDidMount() {
+    this.setState(
+      {
+        data: data.bigSlider
+      },
+      () => {
+        // remove preloader
+        //? todo preloader ?
+      }
+    );
+  }
   _onDotsClick = (e) => {
     this.slider.slickPause();
     setTimeout(() => {
@@ -53,14 +66,15 @@ class SliderMain extends Component {
 
   _imageScale = () => {
     setTimeout(() => {
-      let activeImg = document.querySelector('.main-slider-wrapper .slick-active img');
+      let activeImg = document.querySelector('.main-slider-wrapper .slick-active .bg');
       if (activeImg) {
-        activeImg.style.transform = 'scale(1.3)';
+        activeImg.style.transform = 'scale(1.1)';
       }
     }, 2000);
   };
 
   render() {
+    let slides = this.state.data;
     // https://react-slick.neostack.com/docs/api
     var settings = {
       autoplay: true,
@@ -83,9 +97,9 @@ class SliderMain extends Component {
           if (buttons[0]) {
             buttons[0].classList.add('slick-was-before');
           }
-          let firstImg = document.querySelector('.main-slider-wrapper .slick-active img');
+          let firstImg = document.querySelector('.main-slider-wrapper .slick-active .bg');
           if (firstImg) {
-            firstImg.style.transform = 'scale(1.3)';
+            firstImg.style.transform = 'scale(1.1)';
           }
         }, 2000);
       },
@@ -99,7 +113,7 @@ class SliderMain extends Component {
         }
       },
       afterChange: (current) => {
-        let allSlides = document.querySelectorAll('.main-slider-wrapper img');
+        let allSlides = document.querySelectorAll('.main-slider-wrapper .bg');
         for (let i = 0; i < allSlides.length; i++) {
           allSlides[i].style.transform = 'scale(1)';
         }
@@ -112,27 +126,17 @@ class SliderMain extends Component {
           <h1>Мы – Seven Degrees. Создаем digital-продукты для бизнеса</h1>
         </div>
         <Slider ref={(slider) => (this.slider = slider)} {...settings}>
-          <div className="slider-item-wrapper">
-            <img src={one} alt="slider" />
-            <div className="bg" />
-            <div className="container">
-              <h5>*Интернет-магазин Infinity Lashes</h5>
-            </div>
-          </div>
-          <div className="slider-item-wrapper">
-            <img src={two} alt="slider" />
-            <div className="bg" />
-            <div className="container">
-              <h5>*Корпоративный сайт Borsa</h5>
-            </div>
-          </div>
-          <div className="slider-item-wrapper">
-            <img src={three} alt="slider" />
-            <div className="bg" />
-            <div className="container">
-              <h5>*Приложение Babyfaine</h5>
-            </div>
-          </div>
+          {slides ? (
+            slides.map((slide) => (
+              <div className="slider-item-wrapper" key={slide.id}>
+                {/* <img src={'img/big_slider/' + slide.src} alt="slider" /> */}
+                <div className="bg" style={{ backgroundImage: 'url(img/big_slider/' + slide.src + ')' }} />
+                <div className="container">
+                  <h5>{slide.name}</h5>
+                </div>
+              </div>
+            ))
+          ) : null}
         </Slider>
       </div>
     );
