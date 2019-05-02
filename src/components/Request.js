@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-
+import { post_send } from '../mail/mail';
 import sentimg from '../img/sent.png';
+
+var phpmail = require('../mail/mail.php');
+// require('../mail/phpmailer/Exception.php');
+// require('../mail/phpmailer/PHPMailer.php');
+// require('../mail/phpmailer/SMTP.php');
 
 class Request extends Component {
   constructor(props) {
@@ -109,9 +114,10 @@ class Request extends Component {
   _letterToSend = (e) => {
     e.preventDefault();
     if (this.state.formValid) {
-      console.log('sent');
+      post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
     } else {
       console.log('not valid');
+      post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
     }
   };
 

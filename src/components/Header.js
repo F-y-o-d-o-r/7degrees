@@ -53,7 +53,7 @@ class Header extends Component {
           break;
         case 'Контакты':
           if (scrolled > 0) {
-            console.log(1, scrolled);
+            // console.log(1, scrolled);
             div.classList.add('black-bg');
           }
           break;
