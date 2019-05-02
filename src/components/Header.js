@@ -12,7 +12,6 @@ class Header extends Component {
   };
   componentDidMount() {
     this._checkCurrentPage();
-
     // START custom heder scroll
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
@@ -41,14 +40,15 @@ class Header extends Component {
           break;
         case 'О компании':
           if (scrolled > 0) {
-            console.log(1, scrolled);
             div.classList.add('black-bg');
             div.classList.remove('white-bg');
           }
-          if (scrolled > 1400) {
-            console.log(2);
-            div.classList.remove('black-bg');
-            div.classList.add('white-bg');
+          if (window.innerWidth > 1351) {
+            if (scrolled > 1400) {
+              console.log(2);
+              div.classList.remove('black-bg');
+              div.classList.add('white-bg');
+            }
           }
           break;
         case 'Контакты':
