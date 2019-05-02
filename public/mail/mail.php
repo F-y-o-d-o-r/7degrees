@@ -20,14 +20,14 @@
 //     //mail('fyodor.work@gmail.com', 'From portfolio site', $message);
 // }
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use phpmailer\PHPMailer\Exception;
+use phpmailer\PHPMailer\PHPMailer;
 
-require '../../mail/phpmailer/Exception.php';
-require '../../mail/phpmailer/PHPMailer.php';
-require '../../mail/phpmailer/SMTP.php';
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
 
-if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['tel'])) {
+if (isset($_POST['email']) && isset($_POST['message'])) {
     $mail = new PHPMailer(true); // Passing `true` enables exceptions
     try {
         //Server settings
@@ -35,14 +35,14 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['tel'])) {
         $mail->isSMTP(); // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
         $mail->SMTPAuth = true; // Enable SMTP authentication
-        $mail->Username = '777sevendegrees777@gmail.com'; // SMTP username
-        $mail->Password = 'asdfdKJasdfdKJ'; // SMTP password
+        $mail->Username = 'anserglob.cn@gmail.com'; // SMTP username
+        $mail->Password = 'KmL3BTsQf'; // SMTP password
         $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587; // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('777sevendegrees777@gmail.com', 'Mailer');
-        $mail->addAddress('777sevendegrees777@gmail.com', 'Joe User'); // Add a recipient
+        $mail->setFrom('fyodor.work@gmail.com', 'Mailer');
+        $mail->addAddress('fyodor.work@gmail.com', 'Joe User'); // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
         // $mail->addCC('cc@example.com');
@@ -54,9 +54,9 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['tel'])) {
 
         //Content
         $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = "From 7degrees " . date('d-m-Y H:i:s');
-        $mail->Body = "Name: " . $_POST['name'] . "<br>" . "Email: " . $_POST['email'] . "<br>" . "Tel: " . $_POST['tel']. "<br>" . "Message: " . $_POST['message'] . "<br>";
-        $mail->AltBody = "Name: " . $_POST['name'] . "<br>" . "Email: " . $_POST['email'] . "<br>" . "Tel: " . $_POST['tel']. "<br>" . "Message: " . $_POST['textarea'] . "<br>";
+        $mail->Subject = "From portfolio site" . date('d-m-Y H:i:s');
+        $mail->Body = "Email: " . $_POST['email'] . "<br>" . "Message: " . $_POST['message'] . "<br>";
+        $mail->AltBody = "Email: " . $_POST['email'] . "Message: " . $_POST['message'];
 
         $mail->send();
         echo 'Message has been sent';

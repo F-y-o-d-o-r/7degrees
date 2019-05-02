@@ -101,7 +101,7 @@ class Request extends Component {
     }
   };
   _validateTelInput = (text) => {
-    var re = /^\d{10,}$/;
+    var re = /^.{10,}$/;
     return re.test(text);
   };
   _fullSubmit = () => {
@@ -114,10 +114,16 @@ class Request extends Component {
   _letterToSend = (e) => {
     e.preventDefault();
     if (this.state.formValid) {
-      post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
+      // post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
+      post_send(
+        'body',
+        phpmail,
+        [ 'name', 'email', 'tel', 'textarea' ],
+        [ this.state.name, this.state.email, this.state.tel, this.state.textarea ]
+      );
     } else {
       console.log('not valid');
-      post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
+      // post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
     }
   };
 

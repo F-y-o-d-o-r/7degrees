@@ -31,8 +31,7 @@ export function func_response() {
   if (req.readyState === 4 && req.status === 200) {
     //!!! - проверка условий "успех"// свойство readyState - код готовности сервера, значение 4 – «обработка запроса» (первое стандартное условие для получения ответа)
     // свойство status – код ответа сервера, значение 200 – «запрос обработан успешно» (второе стандартное условие для получения ответа)
-    // console.log('req', req);
-    // console.log('req.responseText', req.responseText);
+    console.log('sent', req);
     // let form = new BackForm();
     // form.handleShow();
     // console.log('sent2');
