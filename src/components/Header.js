@@ -164,9 +164,9 @@ class Header extends Component {
               <a href="/#" id="request" onClick={(e) => this._request(e)}>
                 <FormattedMessage id={'nav.request'} />
               </a>
-              <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
+              {/* <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
                 RU
-              </a>
+              </a> */}
             </nav>
             <div className="mobile-popup-wrapper">
               <h5>{currentPage}</h5>
