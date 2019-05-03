@@ -24,6 +24,7 @@
       display: flex
       border-bottom: 1px solid $lines
       margin-bottom: 40px
+      overflow: hidden
       +r(1350)
         flex-direction: column
       .archive-year
@@ -32,7 +33,9 @@
         font-size: 24px
         color: $year
         flex-shrink: 0
+        position: absolute
         +r(1350)
+          position: static
           flex-basis: auto
           margin-bottom: 20px
           margin-top: 17px
@@ -54,8 +57,10 @@
         border-bottom: 1px solid $lines
         box-sizing: border-box
         max-width: 1060px
+        margin-left: 220px
         +trans()
         +r(1350)
+          margin-left: 0
           max-width: 100%
           padding-top: 30px
           padding-bottom: 30px
@@ -64,6 +69,12 @@
           padding-bottom: 20px
         &:hover
           background-color: #fff
+          margin-left: 0
+          padding-left: 220px
+          max-width: 100%
+          +r(1350)
+            padding-left: 0
+            max-width: auto
           .left-part
             .header
               color: #000000
@@ -91,6 +102,7 @@
             display: none
             padding-right: 0
             margin-bottom: 15px
+            width: 100%
             +r(1350)
               display: block
             +r(414)
