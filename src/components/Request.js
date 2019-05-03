@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { post_send } from '../mail/mail';
+// import { post_send } from '../mail/mail';
 import sentimg from '../img/sent.png';
 
 var phpmail = require('../mail/mail.php');
@@ -7,6 +7,7 @@ var phpmail = require('../mail/mail.php');
 // require('../mail/phpmailer/PHPMailer.php');
 // require('../mail/phpmailer/SMTP.php');
 
+var req;
 class Request extends Component {
   constructor(props) {
     super(props);
@@ -114,16 +115,45 @@ class Request extends Component {
   _letterToSend = (e) => {
     e.preventDefault();
     if (this.state.formValid) {
-      // post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
-      post_send(
+      // post_send(
+      //   'body',
+      //   phpmail,
+      //   [ 'name', 'email', 'tel', 'textarea' ],
+      //   [ this.state.name, this.state.email, this.state.tel, this.state.textarea ]
+      // );
+      this._phpMailer(
         'body',
         phpmail,
         [ 'name', 'email', 'tel', 'textarea' ],
         [ this.state.name, this.state.email, this.state.tel, this.state.textarea ]
       );
+      document.querySelector('.request-popup-wrapper form button[type="submit"]').setAttribute('disabled', 'disabled');
     } else {
       console.log('not valid');
-      // post_send('body', phpmail, [ 'email', 'message' ], [ 'this.state.email', 'this.state.name' ]);
+    }
+  };
+  _phpMailer = (elemm, program, param_arr, value_arr) => {
+    req = new XMLHttpRequest();
+    req.open('POST', program, true);
+    req.onreadystatechange = this._func_response;
+    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    var str = '';
+    for (var i = 0; i < param_arr.length; i++) {
+      str += param_arr[i] + '=' + encodeURIComponent(value_arr[i]) + '&';
+    }
+    req.send(str);
+  };
+  _func_response = () => {
+    if (req.readyState === 4 && req.status === 200) {
+      // console.log('req', req);
+      // console.log('req.responseText', req.responseText);
+      this.setState({
+        sent: true
+      });
+      setTimeout(() => {
+        document.querySelector('.request-popup-wrapper').classList.remove('active');
+        document.querySelector('.popup-bg').classList.remove('active');
+      }, 3000);
     }
   };
 
@@ -239,7 +269,7 @@ class Request extends Component {
             </form>
           </section>
         ) : (
-          <section className="request-popup-wrapper sent">
+          <section className="request-popup-wrapper active sent">
             <svg
               onClick={this._closePopup}
               width="23"

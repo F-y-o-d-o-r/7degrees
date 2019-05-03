@@ -55,7 +55,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['tel'])) {
         //Content
         $mail->isHTML(true); // Set email format to HTML
         $mail->Subject = "From 7degrees " . date('d-m-Y H:i:s');
-        $mail->Body = "Name: " . $_POST['name'] . "<br>" . "Email: " . $_POST['email'] . "<br>" . "Tel: " . $_POST['tel']. "<br>" . "Message: " . $_POST['message'] . "<br>";
+        $mail->Body = "Name: " . $_POST['name'] . "<br>" . "Email: " . $_POST['email'] . "<br>" . "Tel: " . $_POST['tel']. "<br>" . "Message: " . $_POST['textarea'] . "<br>";
         $mail->AltBody = "Name: " . $_POST['name'] . "<br>" . "Email: " . $_POST['email'] . "<br>" . "Tel: " . $_POST['tel']. "<br>" . "Message: " . $_POST['textarea'] . "<br>";
 
         $mail->send();

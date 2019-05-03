@@ -126,7 +126,7 @@ class SliderMain extends Component {
           {slides ? (
             slides.map((slide) => (
               <div className="slider-item-wrapper" key={slide.id}>
-                <div className="bg" style={{ backgroundImage: 'url(img/big_slider/' + slide.src + ')' }} />
+                <div className="bg" style={{ backgroundImage: 'url(img/bigslider/' + slide.src + ')' }} />
                 <div className="container">
                   <h5>{slide.name}</h5>
                 </div>
