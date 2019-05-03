@@ -47,7 +47,7 @@ class ContactsScreen extends Component {
                 />
               </svg>
 
-              <a href="/briefru.doc" download>
+              <a href="/briefru.docx" download>
                 Скачать бриф (29 КБ)
               </a>
             </div>
