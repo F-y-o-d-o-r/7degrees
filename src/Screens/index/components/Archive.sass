@@ -24,7 +24,7 @@
       display: flex
       border-bottom: 1px solid $lines
       margin-bottom: 40px
-      overflow: hidden
+      position: relative
       +r(1350)
         flex-direction: column
       .archive-year
@@ -34,6 +34,13 @@
         color: $year
         flex-shrink: 0
         position: absolute
+        position: sticky
+        top: 60px
+        left: 0
+        bottom: 20px
+        z-index: 100
+        height: 20px
+        margin-bottom: 10px
         +r(1350)
           position: static
           flex-basis: auto
@@ -57,7 +64,6 @@
         border-bottom: 1px solid $lines
         box-sizing: border-box
         max-width: 1060px
-        margin-left: 220px
         +trans()
         +r(1350)
           margin-left: 0
@@ -70,8 +76,6 @@
         &:hover
           background-color: #fff
           margin-left: 0
-          padding-left: 220px
-          max-width: 100%
           +r(1350)
             padding-left: 0
             max-width: auto

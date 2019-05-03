@@ -13,6 +13,11 @@ class Header extends Component {
   };
   componentDidMount() {
     this._checkCurrentPage();
+    var yearHeaders, yearWrappers;
+    setTimeout(() => {
+      yearHeaders = document.querySelectorAll('.archive-year');
+      yearWrappers = document.querySelectorAll('.archive-items');
+    }, 1000);
     // START custom heder scroll
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
@@ -66,8 +71,20 @@ class Header extends Component {
           }
           break;
       }
+      // END custom heder scroll
+      // setTimeout(() => {
+      //   for (let i = 0; i < yearWrappers.length; i++) {
+      //     if (yearWrappers[i].getBoundingClientRect().top < 10) {
+      //       // yearWrappers[i].querySelector('.archive-year').style.position = 'sticky';
+      //       // yearWrappers[i].querySelector('.archive-year').style.top = '2em';
+      //     }
+      //     if (yearWrappers[i].getBoundingClientRect().bottom < 10) {
+      //       // yearWrappers[i].querySelector('.archive-year').style.position = 'absolute';
+      //     }
+      //   }
+      //   // console.log(yearWrappers);
+      // }, 1000);
     };
-    // END custom heder scroll
     // if (this.state.currentPage === 'Портфолио') {
     //   let controllerContacts = new ScrollMagic.Controller();
     //   new ScrollMagic.Scene({

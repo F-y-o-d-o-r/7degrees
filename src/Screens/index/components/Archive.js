@@ -17,7 +17,6 @@ class Archive extends Component {
         //? todo preloader ?
       }
     );
-
     // START Year scroll
     // setTimeout(() => {
     //   let controllerContacts = new ScrollMagic.Controller();
@@ -44,6 +43,23 @@ class Archive extends Component {
     //   }
     // }, 1000);
     // END Year scroll
+  }
+  componentDidUpdate() {
+    // let yearHeaders = document.querySelectorAll('.archive-year');
+    // let yearWrappers = document.querySelectorAll('.archive-items');
+    // for (let i = 0; i < yearHeaders.length; i++) {
+    //   console.log(yearHeaders[i], yearHeaders[i].offsetTop);
+    // }
+    // window.onscroll = function(params) {
+    // for (let i = 0; i < yearWrappers.length; i++) {
+    // if (yearWrappers[i].getBoundingClientRect().top < 50) {
+    //   // console.log(yearWrappers[i].querySelector('.archive-year'));
+    // }
+    // }
+    // for (let i = 0; i < yearWrappers.length; i++) {
+    //   console.log(yearWrappers[i], yearWrappers[i].getBoundingClientRect().top);
+    // }
+    // };
   }
   render() {
     let { data } = this.state;
