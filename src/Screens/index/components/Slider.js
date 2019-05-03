@@ -77,6 +77,7 @@ class SliderMain extends Component {
       autoplay: true,
       dots: true,
       infinite: true,
+      draggable: false,
       speed: 500,
       autoplaySpeed: 7000,
       slidesToShow: 1,
