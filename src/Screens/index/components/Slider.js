@@ -67,7 +67,7 @@ class SliderMain extends Component {
       if (activeImg) {
         activeImg.style.transform = 'scale(1.1)';
       }
-    }, 2000);
+    }, 10);
   };
 
   render() {
@@ -98,7 +98,7 @@ class SliderMain extends Component {
           if (firstImg) {
             firstImg.style.transform = 'scale(1.1)';
           }
-        }, 2000);
+        }, 10);
       },
       beforeChange: (current, next) => {
         let buttons = document.querySelectorAll('.main-slider-wrapper .slick-dots li button');
