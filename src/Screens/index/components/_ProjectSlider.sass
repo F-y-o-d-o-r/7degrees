@@ -27,6 +27,7 @@
     bottom: 31px
     width: auto
     right: 33px
+    z-index: 2
     +r(1350)
       bottom: 20px
     li
@@ -35,3 +36,15 @@
     button
       &::before
         font-size: 9px
+  .slick-arrow
+    z-index: 1
+    position: absolute
+    background-color: transparent
+    height: 100%
+    width: 50%
+    &:before
+      content: ''
+  .slick-next
+    right: 0
+  .slick-prev
+    left: 0

@@ -13,11 +13,11 @@ class Header extends Component {
   };
   componentDidMount() {
     this._checkCurrentPage();
-    var yearHeaders, yearWrappers;
-    setTimeout(() => {
-      yearHeaders = document.querySelectorAll('.archive-year');
-      yearWrappers = document.querySelectorAll('.archive-items');
-    }, 1000);
+    // var yearHeaders, yearWrappers;
+    // setTimeout(() => {
+    //   yearHeaders = document.querySelectorAll('.archive-year');
+    //   yearWrappers = document.querySelectorAll('.archive-items');
+    // }, 1000);
     // START custom heder scroll
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
@@ -28,12 +28,12 @@ class Header extends Component {
         setTimeout(() => {
           div.classList.remove('hide');
           div.classList.add('show');
-        }, 500);
+        }, 10);
       } else {
         setTimeout(() => {
           div.classList.remove('show');
           div.classList.add('hide');
-        }, 500);
+        }, 10);
       }
       oldScrollY = scrolled;
       switch (this.state.currentPage) {

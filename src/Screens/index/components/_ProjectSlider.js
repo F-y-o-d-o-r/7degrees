@@ -14,7 +14,7 @@ export default class ProjectSlider extends Component {
     var settings = {
       autoplay: false,
       dots: true,
-      arrows: false
+      arrows: true
       // adaptiveHeight: true
       // infinite: true,
       // speed: 500,
