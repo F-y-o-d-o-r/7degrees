@@ -16,19 +16,28 @@ const messages = {
   ru: messages_ru,
   en: messages_en
 };
-const language = 'ru';
+// var language = 'ru';
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      language: 'ru'
+    };
+  }
+  _switchLanguage = (lang) => {
+    this.setState({ language: lang });
+  };
   render() {
+    let { language } = this.state;
     return (
       <IntlProvider locale={language} messages={messages[language]}>
         <BrowserRouter>
           <ScrollToTop>
-            <Header />
+            <Header switch={this._switchLanguage} />
             <Switch>
               <Route path="/" exact component={IndexScreen} />
               <Route path="/contacts" component={ContactsScreen} />
               <Route path="/about" component={AboutScreen} />
-              {/* ?todo */}
               <Route component={Fof} />
             </Switch>
             <Request />

@@ -1,4 +1,6 @@
 {
-  "app.title": "Добро пожаловать в react-intl",
-  "app.intro": "Чтобы начать, отредактируй <code>src/App.js</code> сохрани и перезагрузи."
+  "nav.portfolio": "Портфолио",
+  "nav.about": "О Компании",
+  "nav.contacts": "Контакты",
+  "nav.request": "Оставить заявку"
 }

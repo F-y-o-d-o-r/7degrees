@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import logo from '../img/logo.png';
 // import ScrollMagic from 'scrollmagic';
@@ -67,8 +68,6 @@ class Header extends Component {
       }
     };
     // END custom heder scroll
-
-    // heder scroll
     // if (this.state.currentPage === 'Портфолио') {
     //   let controllerContacts = new ScrollMagic.Controller();
     //   new ScrollMagic.Scene({
@@ -116,8 +115,10 @@ class Header extends Component {
     e.preventDefault();
     if (e.target.text === 'EN') {
       e.target.text = 'RU';
+      this.props.switch('ru');
     } else {
       e.target.text = 'EN';
+      this.props.switch('en');
     }
   };
   _boorger = (e) => {
@@ -135,12 +136,16 @@ class Header extends Component {
             </Link>
             <nav>
               <NavLink exact to="/">
-                Портфолио
+                <FormattedMessage id={'nav.portfolio'} />
               </NavLink>
-              <NavLink to="/about">О компании</NavLink>
-              <NavLink to="/contacts">Контакты</NavLink>
+              <NavLink to="/about">
+                <FormattedMessage id={'nav.about'} />
+              </NavLink>
+              <NavLink to="/contacts">
+                <FormattedMessage id={'nav.contacts'} />
+              </NavLink>
               <a href="/#" id="request" onClick={(e) => this._request(e)}>
-                Оставить заявку
+                <FormattedMessage id={'nav.request'} />
               </a>
               <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
                 RU
