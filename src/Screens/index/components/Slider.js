@@ -120,8 +120,10 @@ class SliderMain extends Component {
     };
     return (
       <div className="main-slider-wrapper">
-        <div className="container">
-          <h1>Мы – Seven Degrees. Создаем digital-продукты для бизнеса</h1>
+        <div className="container header">
+          <div className="headerz">
+            <h1>Мы – Seven Degrees. Создаем digital-продукты для бизнеса</h1>
+          </div>
         </div>
         <Slider ref={(slider) => (this.slider = slider)} {...settings}>
           {slides ? (
