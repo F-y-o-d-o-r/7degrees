@@ -50,7 +50,6 @@ class Header extends Component {
           }
           if (window.innerWidth > 1351) {
             if (scrolled > 1400) {
-              console.log(2);
               div.classList.remove('black-bg');
               div.classList.add('white-bg');
             }
@@ -94,12 +93,15 @@ class Header extends Component {
       case '/':
         currentPage = 'Портфолио';
         document.querySelector('.header-wrapper').classList.remove('black-bg');
+        document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
       case '/about':
         currentPage = 'О компании';
+        document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
       case '/contacts':
         currentPage = 'Контакты';
+        document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
       default:
         currentPage = 'Портфолио';
