@@ -10,7 +10,6 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-slick": "^0.24.0",
-    "scrollmagic": "^2.0.6",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
@@ -22,10 +21,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ]
 }

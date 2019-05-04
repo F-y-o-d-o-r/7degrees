@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ScrollMagic from 'scrollmagic';
 
 import data from '../../../json/data.json';
 
@@ -17,32 +16,6 @@ class Archive extends Component {
         //? todo preloader ?
       }
     );
-    // START Year scroll
-    // setTimeout(() => {
-    //   let controllerContacts = new ScrollMagic.Controller();
-    //   // new ScrollMagic.Scene({
-    //   //   triggerElement: '.archive-items',
-    //   //   triggerHook: 0,
-    //   //   offset: -150,
-    //   //   // duration: '100%',
-    //   //   reverse: true
-    //   // })
-    //   //   .setClassToggle('.archive-year', 'fixed-year')
-    //   //   // .addIndicators({ name: 'smoth-show-from-div' })
-    //   //   .addTo(controllerContacts);
-    //   let years = document.querySelectorAll('.archive-items');
-    //   for (let i = 0; i < years.length; i++) {
-    //     console.log(this);
-    //     new ScrollMagic.Scene({
-    //       triggerElement: years[i],
-    //       triggerHook: 0.5,
-    //       duration: '80%'
-    //     })
-    //       .setPin('.archive-year')
-    //       .addTo(controllerContacts);
-    //   }
-    // }, 1000);
-    // END Year scroll
   }
   componentDidUpdate() {
     // let yearHeaders = document.querySelectorAll('.archive-year');

@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import logo from '../img/logo.png';
-// import ScrollMagic from 'scrollmagic';
 
 class Header extends Component {
   state = {
@@ -13,11 +12,11 @@ class Header extends Component {
   };
   componentDidMount() {
     this._checkCurrentPage();
-    // var yearHeaders, yearWrappers;
-    // setTimeout(() => {
-    //   yearHeaders = document.querySelectorAll('.archive-year');
-    //   yearWrappers = document.querySelectorAll('.archive-items');
-    // }, 1000);
+    var yearWrappers;
+    setTimeout(() => {
+      // yearHeaders = document.querySelectorAll('.archive-year');
+      yearWrappers = document.querySelectorAll('.archive-items');
+    }, 1000);
     // START custom heder scroll
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
@@ -59,7 +58,6 @@ class Header extends Component {
           break;
         case 'Контакты':
           if (scrolled > 0) {
-            // console.log(1, scrolled);
             div.classList.add('black-bg');
           }
           break;
@@ -72,30 +70,18 @@ class Header extends Component {
           break;
       }
       // END custom heder scroll
-      // setTimeout(() => {
-      //   for (let i = 0; i < yearWrappers.length; i++) {
-      //     if (yearWrappers[i].getBoundingClientRect().top < 10) {
-      //       // yearWrappers[i].querySelector('.archive-year').style.position = 'sticky';
-      //       // yearWrappers[i].querySelector('.archive-year').style.top = '2em';
-      //     }
-      //     if (yearWrappers[i].getBoundingClientRect().bottom < 10) {
-      //       // yearWrappers[i].querySelector('.archive-year').style.position = 'absolute';
-      //     }
-      //   }
-      //   // console.log(yearWrappers);
-      // }, 1000);
+      // START Years hide at botoom
+      setTimeout(() => {
+        for (let i = 0; i < yearWrappers.length; i++) {
+          if (yearWrappers[i].getBoundingClientRect().bottom < 200) {
+            yearWrappers[i].querySelector('.archive-year').classList.add('hide');
+          } else {
+            yearWrappers[i].querySelector('.archive-year').classList.remove('hide');
+          }
+        }
+      }, 1000);
+      // END Years hide at botoom
     };
-    // if (this.state.currentPage === 'Портфолио') {
-    //   let controllerContacts = new ScrollMagic.Controller();
-    //   new ScrollMagic.Scene({
-    //     triggerElement: '.projects',
-    //     offset: 200,
-    //     duration: 0
-    //   })
-    //     .setClassToggle('.header-wrapper', 'white-bg')
-    //     //.addIndicators({ name: 'smoth-show-from-div' })
-    //     .addTo(controllerContacts);
-    // }
   }
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {

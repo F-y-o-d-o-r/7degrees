@@ -40,6 +40,8 @@
         z-index: 100
         height: 20px
         margin-bottom: 10px
+        opacity: 1
+        +trans()
         +r(1350)
           position: static
           flex-basis: auto
@@ -49,6 +51,8 @@
           margin-top: 10px
           margin-bottom: 15px
           font-size: 20px
+        &.hide
+          opacity: 0
       .fixed-year
         color: red!important
       .archive-projects-wrapper
