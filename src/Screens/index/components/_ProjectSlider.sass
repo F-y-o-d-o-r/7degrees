@@ -6,10 +6,16 @@
   +r(1350)
     height: 354px
     width: 349px
-  +r(784)
+  +r(1163)
+    width: 100%
+    height: calc(55vw - 130px)
+    // margin-left: 50%
+    // transform: translateX(-50%)
+  +r(630)
     height: 390px
+    height: calc(100vw)
     width: 384px
-  +r(470)
+  +r(630)
     width: 100%
   .slick-slider,
   .slick-slider img,
@@ -17,8 +23,14 @@
     height: 400px
     +r(1350)
       height: 354px
-    +r(784)
+    +r(630)
       height: 390px
+  .slick-slider,
+  .slick-slider img,
+  .slick-slider .slick-track, 
+  .slick-slider .slick-list
+    +r(1163)
+      height: 100%
   .slick-slide > div
     position: relative
   .img
@@ -48,3 +60,8 @@
     right: 0
   .slick-prev
     left: 0
+  .img
+    +r(1063)
+      // height: calc(65vw - 130px)
+    +r(630)
+      // height: 390px
