@@ -69,7 +69,7 @@ class Archive extends Component {
           <h2>Архив работ:</h2>
           <div className="archive-wrapper">
             {data ? (
-              data.reverse().map((data) => (
+              data.map((data) => (
                 <div className="archive-items" key={data.object.year}>
                   <div className="archive-year">{data.object.year}</div>
                   <div className="archive-projects-wrapper">
