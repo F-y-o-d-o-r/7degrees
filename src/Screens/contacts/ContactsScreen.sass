@@ -59,6 +59,7 @@ section.contacts
         &:hover
           color: #1945E1
 .social-wrapper
+  overflow: hidden
   h3
     margin-bottom: 67px
     font-size: 30px
@@ -69,6 +70,7 @@ section.contacts
   .circle-wrapper
     display: flex
     flex-wrap: wrap
+    margin-right: -60px
     .circle
       height: 70px
       width: 70px
@@ -90,10 +92,11 @@ section.contacts
         svg
           path
             fill: #1945E1!important
-      &:last-of-type
-        margin-right: 0
-        +r(768)
-          margin-right: 60px
+      // &:last-of-type
+      //   margin-right: 0
+      // &:nth-of-type(3)
+      //   +r(450)
+      //     margin-right: 0
       a
         display: block
         height: 100%
