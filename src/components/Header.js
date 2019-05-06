@@ -21,7 +21,7 @@ class Header extends Component {
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
     window.onscroll = () => {
-      var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+      var scrolled = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       var dY = scrolled - oldScrollY;
       if (dY < 0) {
         setTimeout(() => {
