@@ -92,7 +92,7 @@ class Header extends Component {
     let currentPage;
     switch (this.props.location.pathname) {
       case '/':
-        currentPage = 'Портфолио';
+        this.props.language === 'EN' ? (currentPage = 'Портфолио') : (currentPage = 'Portfolio');
         document.querySelector('.header-wrapper').classList.remove('black-bg');
         document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
@@ -120,11 +120,9 @@ class Header extends Component {
   _changeLanguage = (e) => {
     e.preventDefault();
     if (e.target.text === 'EN') {
-      e.target.text = 'RU';
-      this.props.switch('ru');
+      this.props.switch('RU');
     } else {
-      e.target.text = 'EN';
-      this.props.switch('en');
+      this.props.switch('EN');
     }
   };
   _boorger = (e) => {
@@ -158,7 +156,7 @@ class Header extends Component {
                 <FormattedMessage id={'nav.request'} />
               </a>
               <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
-                RU
+                {this.props.language}
               </a>
             </nav>
             <div className="mobile-popup-wrapper">

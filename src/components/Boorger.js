@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 class Boorger extends Component {
+  state = {
+    language: 'ru'
+  };
   _linkClick = () => {
     document.querySelector('.boorger-wrapper').classList.toggle('open');
     document.querySelector('#boorgerToOpen').classList.remove('open');
@@ -15,9 +19,9 @@ class Boorger extends Component {
   _changeLanguage = (e) => {
     e.preventDefault();
     if (e.target.text === 'EN') {
-      e.target.text = 'RU';
+      this.props.switch('RU');
     } else {
-      e.target.text = 'EN';
+      this.props.switch('EN');
     }
   };
   render() {
@@ -26,19 +30,19 @@ class Boorger extends Component {
         <div className="boorger-content">
           <nav>
             <NavLink exact to="/" onClick={this._linkClick}>
-              Портфолио
+              <FormattedMessage id={'nav.portfolio'} />
             </NavLink>
             <NavLink to="/about" onClick={this._linkClick}>
-              О компании
+              <FormattedMessage id={'nav.about'} />
             </NavLink>
             <NavLink to="/contacts" onClick={this._linkClick}>
-              Контакты
+              <FormattedMessage id={'nav.contacts'} />
             </NavLink>
             <a href="/#" id="request" onClick={(e) => this._request(e)}>
-              Оставить заявку
+              <FormattedMessage id={'nav.request'} />
             </a>
             <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
-              EN
+              {this.props.language}
             </a>
           </nav>
           <div className="contacts-wrapper">

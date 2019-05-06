@@ -13,15 +13,15 @@ import messages_en from './translations/en.json';
 import messages_ru from './translations/ru.json';
 addLocaleData([ ...locale_en, ...locale_ru ]);
 const messages = {
-  ru: messages_ru,
-  en: messages_en
+  EN: messages_ru,
+  RU: messages_en
 };
 // var language = 'ru';
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      language: 'ru'
+      language: 'EN'
     };
   }
   _switchLanguage = (lang) => {
@@ -33,7 +33,7 @@ class App extends Component {
       <IntlProvider locale={language} messages={messages[language]}>
         <BrowserRouter>
           <ScrollToTop>
-            <Header switch={this._switchLanguage} />
+            <Header switch={this._switchLanguage} language={language} />
             <Switch>
               <Route path="/" exact component={IndexScreen} />
               <Route path="/contacts" component={ContactsScreen} />
@@ -41,7 +41,7 @@ class App extends Component {
               <Route component={Fof} />
             </Switch>
             <Request />
-            <Boorger />
+            <Boorger switch={this._switchLanguage} language={language} />
             <Footer />
           </ScrollToTop>
         </BrowserRouter>
