@@ -6,6 +6,10 @@ import { FormattedMessage } from 'react-intl';
 import logo from '../img/logo.png';
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.boorgerToOpenRef = React.createRef();
+  }
   state = {
     currentPage: 'Портфолио',
     firstPageScroll: true
@@ -81,6 +85,7 @@ class Header extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this._checkCurrentPage();
+      this._mobileLogoClick();
     }
   }
   _checkCurrentPage = () => {
@@ -126,6 +131,10 @@ class Header extends Component {
     e.currentTarget.classList.toggle('open');
     document.querySelector('.boorger-wrapper').classList.toggle('open');
   };
+  _mobileLogoClick() {
+    document.querySelector('.boorger-wrapper').classList.remove('open');
+    this.boorgerToOpenRef.current.classList.remove('open');
+  }
   render() {
     let { currentPage } = this.state;
     return (
@@ -154,7 +163,7 @@ class Header extends Component {
             </nav>
             <div className="mobile-popup-wrapper">
               <h5>{currentPage}</h5>
-              <div className="boorger-to-open" id="boorgerToOpen" onClick={this._boorger}>
+              <div className="boorger-to-open" id="boorgerToOpen" onClick={this._boorger} ref={this.boorgerToOpenRef}>
                 <span />
                 <span />
                 <span />
