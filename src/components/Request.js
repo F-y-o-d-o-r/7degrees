@@ -192,7 +192,13 @@ class Request extends Component {
             <form>
               <div
                 className={
-                  !nameVisited ? 'form-group' : nameVisited & !nameValid ? 'form-group error' : 'form-group walid'
+                  !nameVisited ? (
+                    'form-group'
+                  ) : nameVisited & !nameValid ? (
+                    'form-group focused error'
+                  ) : (
+                    'form-group focused walid'
+                  )
                 }
               >
                 <label htmlFor="name" className="form-label">
@@ -216,7 +222,13 @@ class Request extends Component {
               <div className="row">
                 <div
                   className={
-                    !emailVisited ? 'form-group' : emailVisited & !emailValid ? 'form-group error' : 'form-group walid'
+                    !emailVisited ? (
+                      'form-group'
+                    ) : emailVisited & !emailValid ? (
+                      'form-group focused error'
+                    ) : (
+                      'form-group focused walid'
+                    )
                   }
                 >
                   <label htmlFor="email" className="form-label">
@@ -238,7 +250,13 @@ class Request extends Component {
                 </div>
                 <div
                   className={
-                    !telVisited ? 'form-group' : telVisited & !telValid ? 'form-group error' : 'form-group walid'
+                    !telVisited ? (
+                      'form-group'
+                    ) : telVisited & !telValid ? (
+                      'form-group focused error'
+                    ) : (
+                      'form-group focused walid'
+                    )
                   }
                 >
                   <label htmlFor="tel" className="form-label">
