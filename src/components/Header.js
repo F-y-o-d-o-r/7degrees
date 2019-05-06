@@ -12,11 +12,6 @@ class Header extends Component {
   };
   componentDidMount() {
     this._checkCurrentPage();
-    var yearWrappers;
-    setTimeout(() => {
-      // yearHeaders = document.querySelectorAll('.archive-year');
-      yearWrappers = document.querySelectorAll('.archive-items');
-    }, 1000);
     // START custom heder scroll
     var oldScrollY = 0;
     var div = document.querySelector('.header-wrapper');
@@ -39,6 +34,7 @@ class Header extends Component {
         case 'Портфолио':
           if (scrolled > 650) {
             div.classList.add('black-bg');
+            this._yearsHide();
           } else {
             div.classList.remove('black-bg');
           }
@@ -68,20 +64,20 @@ class Header extends Component {
           }
           break;
       }
-      // END custom heder scroll
-      // START Years hide at botoom
-      setTimeout(() => {
-        for (let i = 0; i < yearWrappers.length; i++) {
-          if (yearWrappers[i].getBoundingClientRect().bottom < 200) {
-            yearWrappers[i].querySelector('.archive-year').classList.add('hide');
-          } else {
-            yearWrappers[i].querySelector('.archive-year').classList.remove('hide');
-          }
-        }
-      }, 1000);
-      // END Years hide at botoom
     };
   }
+  // START Years hide at botoom
+  _yearsHide = () => {
+    let yearWrappers = document.querySelectorAll('.archive-items');
+    for (let i = 0; i < yearWrappers.length; i++) {
+      if (yearWrappers[i].getBoundingClientRect().bottom < 200) {
+        yearWrappers[i].querySelector('.archive-year').classList.add('hide');
+      } else {
+        yearWrappers[i].querySelector('.archive-year').classList.remove('hide');
+      }
+    }
+  };
+  // END Years hide at botoom
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this._checkCurrentPage();
