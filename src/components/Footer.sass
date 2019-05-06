@@ -37,15 +37,14 @@
     display: flex
     justify-content: space-between
     +r(550)
-      flex-direction: column
+      flex-direction: column-reverse
       align-items: center
     span
       font-size: 13px
       +fr
       line-height: 1.6
       +r(550)
-        margin-bottom: 80px
-        font-size: 20px
+        font-size: 13px
         text-align: center
     a
       +fr
@@ -53,7 +52,8 @@
       color: #ffffff
       +trans()
       +r(550)
-        font-size: 13px
+        margin-bottom: 80px
+        font-size: 20px
         text-align: center
       &:hover
         color: #1945E1

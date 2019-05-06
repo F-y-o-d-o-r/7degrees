@@ -27,6 +27,7 @@ class Projects extends Component {
           <div className="projects-wrapper">
             {projects ? projects.map((project) => <Project key={project.id} project={project} />) : null}
           </div>
+          <hr />
         </div>
       </section>
     );

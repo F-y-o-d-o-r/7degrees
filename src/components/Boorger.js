@@ -37,9 +37,9 @@ class Boorger extends Component {
             <a href="/#" id="request" onClick={(e) => this._request(e)}>
               Оставить заявку
             </a>
-            {/* <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
+            <a href="/#" id="language" onClick={(e) => this._changeLanguage(e)}>
               EN
-            </a> */}
+            </a>
           </nav>
           <div className="contacts-wrapper">
             <a href="tel:++380500874311">+38 (050) 087-4-311</a>
