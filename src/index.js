@@ -4,34 +4,12 @@ import './index.sass';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// import { IntlProvider, addLocaleData } from 'react-intl';
-// import locale_en from 'react-intl/locale-data/en';
-// import locale_ru from 'react-intl/locale-data/ru';
-// import messages_en from './translations/en.json';
-// import messages_ru from './translations/ru.json';
-
-// addLocaleData([ ...locale_en, ...locale_ru ]);
-// const messages = {
-//   ru: messages_ru,
-//   en: messages_en
-// };
-// const language = navigator.language.split(/[-_]/)[0];
-// const language = 'ru';
-// localStorage.setItem('username', 'John');
-// console.log(localStorage.getItem('username'));
-
-// document.addEventListener('DOMContentLoaded', visibleWebSite);
 window.onload = function visibleWebSite() {
   setTimeout(() => {
     document.querySelector('html').style.opacity = 1;
   }, 50);
 };
-ReactDOM.render(
-  // <IntlProvider locale={language} messages={messages[language]}>
-  <App />,
-  // </IntlProvider>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

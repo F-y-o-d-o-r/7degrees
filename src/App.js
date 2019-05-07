@@ -16,7 +16,6 @@ const messages = {
   EN: messages_ru,
   RU: messages_en
 };
-// var language = 'ru';
 class App extends Component {
   constructor(props) {
     super(props);

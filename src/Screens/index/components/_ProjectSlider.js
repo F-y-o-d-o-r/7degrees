@@ -15,15 +15,6 @@ export default class ProjectSlider extends Component {
       autoplay: false,
       dots: true,
       arrows: true
-      // adaptiveHeight: true
-      // infinite: true,
-      // speed: 500,
-      // autoplaySpeed: 5000,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
-      // fade: true,
-      // adaptiveHeight: true,
-      // pauseOnHover: false
     };
     return (
       <div className="product-slider-wrapper">
@@ -35,8 +26,6 @@ export default class ProjectSlider extends Component {
               </div>
             ))
           ) : null}
-
-          {/* {imgs ? imgs.map((img) => <img key={img} src={'img/projects/' + img} alt="slider" />) : null} */}
         </Slider>
       </div>
     );

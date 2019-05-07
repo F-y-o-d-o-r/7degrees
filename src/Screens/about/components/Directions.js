@@ -8,15 +8,9 @@ class Directions extends Component {
     data: null
   };
   componentDidMount() {
-    this.setState(
-      {
-        data: data.directions
-      },
-      () => {
-        // remove preloader
-        //? todo preloader ?
-      }
-    );
+    this.setState({
+      data: data.directions
+    });
   }
   render() {
     let { data } = this.state;

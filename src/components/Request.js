@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-// import { post_send } from '../mail/mail';
 import sentimg from '../img/sent.png';
 
 var phpmail = require('../mail/mail.php');
-// require('../mail/phpmailer/Exception.php');
-// require('../mail/phpmailer/PHPMailer.php');
-// require('../mail/phpmailer/SMTP.php');
-
 var req;
 class Request extends Component {
   constructor(props) {
@@ -115,12 +110,6 @@ class Request extends Component {
   _letterToSend = (e) => {
     e.preventDefault();
     if (this.state.formValid) {
-      // post_send(
-      //   'body',
-      //   phpmail,
-      //   [ 'name', 'email', 'tel', 'textarea' ],
-      //   [ this.state.name, this.state.email, this.state.tel, this.state.textarea ]
-      // );
       this._phpMailer(
         'body',
         phpmail,
@@ -145,8 +134,6 @@ class Request extends Component {
   };
   _func_response = () => {
     if (req.readyState === 4 && req.status === 200) {
-      // console.log('req', req);
-      // console.log('req.responseText', req.responseText);
       this.setState({
         sent: true
       });

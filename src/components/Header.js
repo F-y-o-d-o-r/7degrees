@@ -34,8 +34,8 @@ class Header extends Component {
         }, 10);
       }
       oldScrollY = scrolled;
-      switch (this.state.currentPage) {
-        case 'Портфолио':
+      switch (this.state.currentPage.props.id) {
+        case 'nav.portfolio':
           if (scrolled > 650) {
             div.classList.add('black-bg');
             this._yearsHide();
@@ -43,7 +43,7 @@ class Header extends Component {
             div.classList.remove('black-bg');
           }
           break;
-        case 'О компании':
+        case 'nav.about':
           if (scrolled > 0) {
             div.classList.add('black-bg');
             div.classList.remove('white-bg');
@@ -55,7 +55,7 @@ class Header extends Component {
             }
           }
           break;
-        case 'Контакты':
+        case 'nav.contacts':
           if (scrolled > 0) {
             div.classList.add('black-bg');
           }
@@ -175,5 +175,4 @@ class Header extends Component {
   }
 }
 
-// export { Header };
 export default withRouter(Header);

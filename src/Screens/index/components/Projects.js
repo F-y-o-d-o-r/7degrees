@@ -8,15 +8,9 @@ class Projects extends Component {
     data: null
   };
   componentDidMount() {
-    this.setState(
-      {
-        data: data.projects
-      },
-      () => {
-        // remove preloader
-        //? todo preloader ?
-      }
-    );
+    this.setState({
+      data: data.projects
+    });
   }
   render() {
     let projects = this.state.data;

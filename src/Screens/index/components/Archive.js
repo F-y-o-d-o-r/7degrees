@@ -7,15 +7,9 @@ class Archive extends Component {
     data: null
   };
   componentDidMount() {
-    this.setState(
-      {
-        data: data.archive
-      },
-      () => {
-        // remove preloader
-        //? todo preloader ?
-      }
-    );
+    this.setState({
+      data: data.archive
+    });
   }
   render() {
     let { data } = this.state;
