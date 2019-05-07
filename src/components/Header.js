@@ -92,20 +92,20 @@ class Header extends Component {
     let currentPage;
     switch (this.props.location.pathname) {
       case '/':
-        this.props.language === 'EN' ? (currentPage = 'Портфолио') : (currentPage = 'Portfolio');
+        currentPage = <FormattedMessage id={'nav.portfolio'} />;
         document.querySelector('.header-wrapper').classList.remove('black-bg');
         document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
       case '/about':
-        currentPage = 'О компании';
+        currentPage = <FormattedMessage id={'nav.about'} />;
         document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
       case '/contacts':
-        currentPage = 'Контакты';
+        currentPage = <FormattedMessage id={'nav.contacts'} />;
         document.querySelector('.header-wrapper').classList.remove('white-bg');
         break;
       default:
-        currentPage = 'Портфолио';
+        currentPage = <FormattedMessage id={'nav.portfolio'} />;
         break;
     }
     this.setState({
